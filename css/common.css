@@ -3,10 +3,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: Kefa, Georgia, "Bookman Old Style", Times, Serif;
 }
 
-body, body p {
-	font-family: Georgia, "Bookman Old Style", Times, Serif;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	margin: 0.5em 0 0.3em;
@@ -48,9 +44,10 @@ header a {
 	margin: 350px auto 40px;
 }
 
-body {
+
+body, body p {
 	background: #FFF none;
-	font: 1em light Helvetica, Arial, Sans-Serif;
+	font: 1em Georgia, "Bookman Old Style", Times, Serif;
 }
 
 main {
