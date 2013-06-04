@@ -1,0 +1,128 @@
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Kefa, Georgia, "Bookman Old Style", Times, Serif;
+}
+
+body, body p {
+	font-family: Georgia, "Bookman Old Style", Times, Serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	margin: 0.5em 0 0.3em;
+}
+
+h1 { font-size: 3.5em; }
+h2 { font-size: 3.0em; }
+h3 { font-size: 2.8em; }
+h4 { font-size: 2.5em; }
+h5 { font-size: 2.3em; }
+h6 { font-size: 2.2em; }
+
+header {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	background: #FFF none;
+}
+
+.mainpage header {
+	background: #333 center no-repeat url('img/home_background_001.jpg');
+	background-size: cover;
+}
+
+header h1 {
+	font-weight: bold;
+	font: 6em Kefa, Georgia, "Bookman Old Style", Times, Serif;
+	text-align: center;
+	margin: 100px auto 10px;
+	color: #222;
+}
+
+header a {
+	text-decoration: none;
+}
+
+.mainpage header h1 {
+	color: #FFF;
+	margin: 350px auto 40px;
+}
+
+body {
+	background: #FFF none;
+	font: 1em light Helvetica, Arial, Sans-Serif;
+}
+
+main {
+	display: block;
+	width: 800px;
+	margin: 0 auto;
+	background: #FFF none;
+}
+
+main nav {
+	padding: 30px 0 0;
+	text-align: center;
+}
+
+main nav a {
+	display: inline;
+	font-weight: bold;
+	font: 2.4em Kefa, Georgia, "Bookman Old Style", Times, Serif;
+	color: #333;
+	padding: 2px;
+	margin: 5px 15px;
+	text-decoration: none;
+}
+
+main nav a.current, main nav a:hover {
+	border-bottom: 2px solid #333;
+	text-decoration: none;
+}
+
+.content p { text-align: justify; }
+.content p, .content ul, .content ol {
+	font-size: 1.4em;
+	line-height: 1.6em;
+}
+
+.content a {
+	text-decoration: none;
+	color: #16b1c3;
+}
+.content a:visited { color: #0d7581; }
+.content a:hover { text-decoration: underline; }
+
+.content img {
+	border: 1px solid #999;
+	padding: 5px;
+	border-radius: 3px;
+	background: #EEE none;
+	margin: 0 auto;
+}
+
+pre, p code {
+	background: #EEE none;
+	border-radius: 3px;
+	border: 1px solid #999;
+	font: Melno, Monaco, Consolas, Monospace;
+	color: #333;
+}
+p code {
+	display: inline;
+	padding: 1px 5px;
+}
+pre {
+	font-size: 1.2em;
+	display: block;
+	padding: 15px;
+}
+
+footer {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	color: #DDD;
+	margin: 2em auto;
+}
