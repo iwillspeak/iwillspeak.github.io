@@ -137,6 +137,7 @@ pre {
 .postheader h1 a, .postheader h1 a:visited {
 	text-decoration: none;
 	color: #333;
+	display: block;
 }
 .postheader h1 a:hover {
 	text-decoration: none;
