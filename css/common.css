@@ -1,9 +1,6 @@
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: Kefa, "Bookman Old Style", Georgia, Times, Serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	margin: 0.5em 0 0.3em;
 }
@@ -83,6 +80,10 @@ main nav a.current, main nav a:hover {
 	font-size: 1.4em;
 	line-height: 1.6em;
 }
+.content ul.article_list {
+	font-size: 1em;
+	line-height: inherit;
+}
 
 .content a {
 	text-decoration: none;
@@ -114,6 +115,44 @@ pre {
 	font-size: 1.2em;
 	display: block;
 	padding: 15px;
+}
+
+.article_list {
+	list-style-type: none;
+	padding: 0;
+	position: relative;
+	display: block;
+}
+
+.article_list a, .article_list a:visited {
+	text-decoration: none;
+	color: #333;
+}
+.article_list a:hover {
+	text-decoration: none;
+	color: #16b1c3;
+}
+.article_list a:hover:before {
+	content: "§";
+	color: #16b1c3;
+	position: absolute;
+	left: -50px;
+}
+
+.postheader {
+	position: relative;
+	display: block;
+}
+.postheader .info {
+	padding: 0 0 5px;
+	margin: 0;
+	vertical-align: center;
+	position: absolute;
+	width: 190px;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+	color: #999;
 }
 
 footer {

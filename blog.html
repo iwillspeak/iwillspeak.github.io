@@ -1,0 +1,14 @@
+---
+group: blog
+layout: page
+title: Blog
+---
+
+<ul class="article_list">
+{% for post in site.posts limit 10 %}
+<li>
+	<h1><a href="{{ site.url }}{{post.url}}">{{post.title}}</a></h1>
+	{{ post.excerpt | markdownify }}
+</li>
+{% endfor %}
+
