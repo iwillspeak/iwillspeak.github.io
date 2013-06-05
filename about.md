@@ -12,6 +12,6 @@ You can usually find me messing around with some form of software or another, an
 
 You can follow me on Twitter as [@willspeak][twitter]. Don't expect me to tell you anything more interesting than the coffee i'm drinking though.
 
-[blog]: {{ site.blog_url }}
+[blog]: {{ site.url }}/blog.html
 [twitter]: {{ site.twitter_url }}
 [flickr]: {{ site.flickr_url }}

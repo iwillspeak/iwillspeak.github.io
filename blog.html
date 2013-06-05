@@ -9,6 +9,7 @@ title: Blog
 <li>
 	<h1><a href="{{ site.url }}{{post.url}}">{{post.title}}</a></h1>
 	{{ post.excerpt | markdownify }}
+	<a class="readmore" href="{{ site.url }}{{post.url}}">Read More &rarr;</a>
 </li>
 {% endfor %}
 

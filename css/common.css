@@ -93,6 +93,7 @@ main nav a.current, main nav a:hover {
 .content a:hover { text-decoration: underline; }
 
 .content img {
+	display: block;
 	border: 1px solid #999;
 	padding: 5px;
 	border-radius: 3px;
@@ -124,21 +125,26 @@ pre {
 	display: block;
 }
 
-.article_list a, .article_list a:visited {
+.article_list h1 a, .article_list h1 a:visited {
 	text-decoration: none;
 	color: #333;
 }
-.article_list a:hover {
+.article_list h1 a:hover {
 	text-decoration: none;
 	color: #16b1c3;
 }
-.article_list a:hover:before {
+.article_list h1 a:hover:before {
 	content: "§";
 	color: #16b1c3;
 	position: absolute;
 	left: -50px;
 }
 
+.article_list a.readmore {
+	text-align: right;
+	display: block;
+	width: 100%;
+}
 .postheader {
 	position: relative;
 	display: block;
@@ -153,6 +159,7 @@ pre {
 	bottom: 0;
 	text-align: right;
 	color: #999;
+	background: transparent none;
 }
 
 footer {
