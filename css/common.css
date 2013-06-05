@@ -145,6 +145,7 @@ pre {
 	display: block;
 	width: 100%;
 }
+
 .postheader {
 	position: relative;
 	display: block;
@@ -154,12 +155,16 @@ pre {
 	margin: 0;
 	vertical-align: center;
 	position: absolute;
-	width: 190px;
+	width: 140px;
 	right: 0;
 	bottom: 0;
 	text-align: right;
 	color: #999;
 	background: transparent none;
+}
+
+.postheader h1 {
+	padding-right: 150px;
 }
 
 footer {

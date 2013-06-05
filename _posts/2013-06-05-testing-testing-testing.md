@@ -1,8 +1,7 @@
 ---
-title: Testing Testing Testing
 group: blog
+title: Testing Testing Testing
 layout: post
-posted: false
 ---
 
 Scripting languages are all the rage these days. I am a fan of Python, although you may prefer Ruby, Node.js or whatever it is the cool kids are using these days. The exact language that takes your fancy however doesn't really matter. They almost all have one thing in common: Unit tests. This is not a startling realisation, nor is it restricted to the realms of modern scripting languages. I hear that even the assembly code running on the jet engine of your favourite airliner is unit tested (a reassuring fact). Startling or not what is important about unit testing with scripting languages is the ease at which the development cycle progresses. If only it could be as easy for other languages.
