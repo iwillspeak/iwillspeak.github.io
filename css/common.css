@@ -48,19 +48,19 @@ body, body p {
 	font: 1em Georgia, "Bookman Old Style", Times, Serif;
 }
 
-main {
+section#main {
 	display: block;
 	width: 800px;
 	margin: 0 auto;
 	background: #FFF none;
 }
 
-main nav {
+section#main nav {
 	padding: 30px 0 10px;
 	text-align: center;
 }
 
-main nav a {
+section#main nav a {
 	display: inline;
 	font-weight: bold;
 	font: 2.4em Kefa, "Bookman Old Style", Georgia, Times, Serif;
@@ -70,7 +70,7 @@ main nav a {
 	text-decoration: none;
 }
 
-main nav a.current, main nav a:hover {
+section#main nav a.current, section#main nav a:hover {
 	border-bottom: 2px solid #333;
 	text-decoration: none;
 }
