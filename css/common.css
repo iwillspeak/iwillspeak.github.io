@@ -1,6 +1,6 @@
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Kefa, Georgia, "Bookman Old Style", Times, Serif;
+	font-family: Kefa, "Bookman Old Style", Georgia, Times, Serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,7 +29,7 @@ header {
 
 header h1 {
 	font-weight: bold;
-	font: 6em Kefa, Georgia, "Bookman Old Style", Times, Serif;
+	font-size: 6em;
 	text-align: center;
 	margin: 100px auto 10px;
 	color: #222;
@@ -42,6 +42,7 @@ header a {
 .mainpage header h1 {
 	color: #FFF;
 	margin: 350px auto 40px;
+	text-shadow: #333 0 2px;
 }
 
 
@@ -65,7 +66,7 @@ main nav {
 main nav a {
 	display: inline;
 	font-weight: bold;
-	font: 2.4em Kefa, Georgia, "Bookman Old Style", Times, Serif;
+	font: 2.4em Kefa, "Bookman Old Style", Georgia, Times, Serif;
 	color: #333;
 	padding: 2px;
 	margin: 5px 15px;

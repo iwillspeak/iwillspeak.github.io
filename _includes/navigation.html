@@ -1,7 +1,7 @@
 <nav>
 	<a
 		{% if page.group == "blog" %} class="current" {% endif %}
-	href="http://willspeak.tumblr.com/">Blog</a>
+	href="{{ site.blog_url }}">Blog</a>
 	<a
 		{% if page.group == "about" %} class="current" {% endif %}
 	href="{{ site.url }}/about.html">About</a>
