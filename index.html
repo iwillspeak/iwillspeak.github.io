@@ -1,6 +1,7 @@
 ---
 group: none
 title: Home
+article_excerpts: false
 ---
 
 <!DOCTYPE html>
@@ -11,6 +12,10 @@ title: Home
 	
 	<main>
 		{% include navigation.html %}
+		
+		{% comment %}
+		{% include article_list.html %}
+		{% endcomment %}
 	</main>
 	
 	{% include footer.html %}

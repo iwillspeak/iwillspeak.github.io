@@ -125,15 +125,24 @@ pre {
 	display: block;
 }
 
-.article_list h1 a, .article_list h1 a:visited {
+.postheader {
+	position: relative;
+	display: block;
+}
+
+.postheader h1 {
+	padding-right: 150px;
+}
+
+.postheader h1 a, .postheader h1 a:visited {
 	text-decoration: none;
 	color: #333;
 }
-.article_list h1 a:hover {
+.postheader h1 a:hover {
 	text-decoration: none;
 	color: #16b1c3;
 }
-.article_list h1 a:hover:before {
+.postheader h1 a:hover:before {
 	content: "§";
 	color: #16b1c3;
 	position: absolute;
@@ -144,12 +153,9 @@ pre {
 	text-align: right;
 	display: block;
 	width: 100%;
+	font-size: 1.2em;
 }
 
-.postheader {
-	position: relative;
-	display: block;
-}
 .postheader .info {
 	padding: 0 0 5px;
 	margin: 0;
@@ -163,9 +169,6 @@ pre {
 	background: transparent none;
 }
 
-.postheader h1 {
-	padding-right: 150px;
-}
 
 footer {
 	display: block;

@@ -1,0 +1,14 @@
+<ul class="article_list">
+{% for post in site.posts %}
+<li>
+	<div class="postheader">
+		<p class="info">{{ post.date | date_to_string }}</p>
+		<h1><a href="{{ site.url }}{{post.url}}">{{post.title}}</a></h1>
+	</div>
+	{% if page.article_excerpts %}
+		{{ post.excerpt | markdownify }}
+		<a class="readmore" href="{{ site.url }}{{post.url}}">Read More &rarr;</a>
+	{% endif %}
+</li>
+{% endfor %}
+</ul>
