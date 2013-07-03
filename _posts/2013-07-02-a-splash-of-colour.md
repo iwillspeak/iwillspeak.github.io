@@ -17,7 +17,7 @@ Configurability is an important factor for an editor. There are a lot of people 
 
 Each different editor has a different set of features, from multiple cursors to advanced find-and-replace and powerful macro systems. The one thing that they all have in common is syntax highlighting. The text that these programs render has to be clear, readable, and pretty enough for you to stare at it for hours on end.
 
-During my time [tweaking Emacs config][emacs_gist], [watching videos][emacs_rocks], and [getting completely stuck][so_question] I came across a neat [collection of themes][themes]. The themes were in an older Emacs theme format though. Seen as this is the future and everything is open source I forked it, updated the themes to the new format and submitted a pull-request. I even got a bit carried away in the process and created a new theme of my own.
+During my time tweaking my [Emacs config][emacs_gist], [watching videos][emacs_rocks], and [getting completely stuck][so_question] I came across a neat [collection of themes][themes]. The themes were in an older Emacs theme format though. Seen as this is the future and everything is open source I forked it, updated the themes to the new format and submitted a pull-request. I even got a bit carried away in the process and created a new theme of my own.
 
 ![Wilson Theme Screenshot][wilson_theme]
 
