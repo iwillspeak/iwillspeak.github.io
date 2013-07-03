@@ -1,4 +1,3 @@
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: Kefa, "Bookman Old Style", Georgia, Times, Serif;
 	font-weight: bold;
@@ -99,6 +98,17 @@ section#main nav a.current, section#main nav a:hover {
 	border-radius: 3px;
 	background: #EEE none;
 	margin: 0 auto;
+	max-width: 95%;
+	height: auto;
+}
+
+.content .caption {
+    display: block;
+	text-align: center;
+	font-style: italic;
+	color: #666666;
+	font-size: 1.2em;
+	margin-top: 0.2em;
 }
 
 pre, p code {
