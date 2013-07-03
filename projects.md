@@ -10,4 +10,4 @@ I have many projects on the go at [Bitbucket](http://bitbucket.org/iwillspeak) a
 
 * [Snooper](http://github.com/iwillspeak/snooper) - Spying on your files and running your tests.
 * [Parsegen](http://github.com/iwillspeak/Parsegen) - Transform grammar files into working top-down parsers.
-* [Thunker](https://vimeo.com/66365606) - Home automation at its finest.
+* [Thunker](https://gist.github.com/iwillspeak/5600085) - Home automation at its finest.
