@@ -6,7 +6,7 @@ title: About
 
 # About {{ site.name }}
 
-{{ site.name }} is the various projects and musings of me, Will Speak. I am a computer science student and software developer. I have just finished my degree and am off into the world. I have an interest in [photography][flickr] and a weakness for all things mac.
+{{ site.name }} is the various projects and musings of me, Will Speak. I am a computer science graduate and software developer. I have just finished my degree and am off into the world. I have an interest in [photography][flickr] and a weakness for all things mac.
 
 You can usually find me messing around with some form of software or another, and this has lead to the creation of many [projects]({{site.url}}/projects.html). When I have the time, or feel the need, I like to post my thoughts on my [Blog][blog].
 
