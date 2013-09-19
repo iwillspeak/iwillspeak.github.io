@@ -8,7 +8,7 @@ It all started one fateful day, as these things have a habit of doing. A friend 
 
 ![A Münar Landing](http://kerbalspaceprogram.com/images/media/screenshots/KSPimage11.png)
 
-The game is still in beta, but there are still hours of fun to be had. The mechanics of the game are pretty simple. You take control of the fledgling space program of the great Kerbal nations. From a election of stock parts, or extra ones if you use any of the multitude of mods, you can create endless rockets, planes and landers. With them you can do pretty much whatever you like. Land on other planets, dock in orbit, build massive space stations or just fly around in the planet's atmosphere. In short you can explore.
+The game is still in beta, but there are still hours of fun to be had. The mechanics of the game are pretty simple. You take control of the fledgling space program of the great Kerbal nations. From a selection of stock parts, or extra ones if you use any of the multitude of mods, you can create endless rockets, planes and landers. With them you can do pretty much whatever you like. Land on other planets, dock in orbit, build massive space stations or just fly around in the planet's atmosphere. In short you can explore.
 
 The game is far from simple though, and it probably isn't for everyone. Before I began playing the game I already had an interest in space exploration and technology. I saw a man [jump from the edge of space](http://www.redbullstratos.com/), I follow [@spacex](http://twitter.com/spacex/) on twitter, I watch space launches live and sometimes I spend hours watching obscure and grainy footage of almost unknown satellites being raised into orbit. I thought I knew my apogee from my perigee. How wrong I was.
 
