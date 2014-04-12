@@ -1,4 +1,5 @@
 ---
+group: blog
 title: Secure for the Common Case
 layout: post
 ---

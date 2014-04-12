@@ -1,6 +1,6 @@
 ---
 title: Help, I'm Learning (and It's Fun)
-section: blog
+group: blog
 layout: post
 ---
 

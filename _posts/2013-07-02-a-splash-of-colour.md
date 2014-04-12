@@ -1,6 +1,6 @@
 ---
 title: A Splash of Colour
-section: blog
+group: blog
 layout: post
 ---
 
