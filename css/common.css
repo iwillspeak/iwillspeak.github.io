@@ -4,12 +4,12 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0.5em 0 0.3em;
 }
 
-h1 { font-size: 3.5em; }
-h2 { font-size: 3.0em; }
-h3 { font-size: 2.8em; }
-h4 { font-size: 2.5em; }
-h5 { font-size: 2.3em; }
-h6 { font-size: 2.2em; }
+h1 { font-size: 2.5em; }
+h2 { font-size: 2.1em; }
+h3 { font-size: 2.0em; }
+h4 { font-size: 1.8em; }
+h5 { font-size: 1.7em; }
+h6 { font-size: 1.6em; }
 
 header {
 	display: block;
@@ -25,7 +25,7 @@ header {
 
 header h1 {
 	font-weight: bold;
-	font-size: 6em;
+	font-size: 4.3em;
 	text-align: center;
 	margin: 100px auto 10px;
 	color: #222;
@@ -41,6 +41,9 @@ header a {
 	text-shadow: #333 0 2px;
 }
 
+body {
+	font: 1.4em Georgia, "Bookman Old Style", Times, Serif;
+}
 
 body, body p {
 	background: #FFF none;
@@ -62,7 +65,7 @@ section#main nav {
 section#main nav a {
 	display: inline;
 	font-weight: bold;
-	font: 2.4em Kefa, "Bookman Old Style", Georgia, Times, Serif;
+	font: 1.7em Kefa, "Bookman Old Style", Georgia, Times, Serif;
 	color: #333;
 	padding: 2px;
 	margin: 5px 15px;
@@ -76,11 +79,9 @@ section#main nav a.current, section#main nav a:hover {
 
 .content p { text-align: justify; }
 .content p, .content ul, .content ol {
-	font-size: 1.4em;
 	line-height: 1.6em;
 }
 .content ul.article_list {
-	font-size: 1em;
 	line-height: inherit;
 }
 
@@ -107,8 +108,8 @@ section#main nav a.current, section#main nav a:hover {
 	text-align: center;
 	font-style: italic;
 	color: #666666;
-	font-size: 1.2em;
 	margin-top: 0.2em;
+	font-size: 0.8em;
 }
 
 pre, p code {
@@ -118,10 +119,12 @@ pre, p code {
 	font: Melno, Monaco, Consolas, Monospace;
 	color: #333;
 }
+
 p code {
 	display: inline;
 	padding: 1px 5px;
 }
+
 pre {
 	font-size: 1.2em;
 	display: block;
@@ -164,7 +167,7 @@ pre {
 	text-align: right;
 	display: block;
 	width: 100%;
-	font-size: 1.2em;
+	font-size: 0.8em;
 }
 
 .postheader .info {
@@ -187,5 +190,6 @@ footer {
 	width: 100%;
 	text-align: center;
 	color: #DDD;
+	font-size: 0.7em;
 	margin: 2em auto;
 }
