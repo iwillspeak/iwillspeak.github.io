@@ -45,9 +45,9 @@ body {
 	font: 1.4em Georgia, "Bookman Old Style", Times, Serif;
 }
 
-body, body p {
+body, body {
 	background: #FFF none;
-	font: 1em Georgia, "Bookman Old Style", Times, Serif;
+	color: #333;
 }
 
 section#main {
