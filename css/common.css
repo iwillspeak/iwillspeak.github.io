@@ -129,6 +129,14 @@ section#main nav a.current, section#main nav a:hover {
 	height: auto;
 }
 
+.content img.avatar {
+	float: right;
+	width: 160px;
+	height: auto;
+	margin-top: 1.5em;
+	border-radius: 90px;
+}
+
 .content .caption {
     display: block;
 	text-align: center;

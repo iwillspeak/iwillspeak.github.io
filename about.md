@@ -10,7 +10,7 @@ title: About
 <p style="float: left; width: 600px;">
 {{ site.name }} is the various projects and musings of me, Will Speak. I am a computer science graduate and software developer. I have just finished my degree and am off into the world. I have an interest in <a href="{{ site.flickr_url }}" alt="My Flickr Site">photography</a> and a weakness for all things mac.
 </p>
-<img style="float: right; width 160px; min-width: 160px; max-width: 160px; height: auto; margin-top: 1.5em;" src="img/avatar.jpg" alt="my face" />
+<img class="avatar" src="img/avatar.jpg" alt="my face" />
 <br style="clear: both;" />
 </div>
 
