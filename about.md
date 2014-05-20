@@ -6,12 +6,13 @@ title: About
 
 # About {{ site.name }}
 
+<div>
 <p style="float: left; width: 600px;">
 {{ site.name }} is the various projects and musings of me, Will Speak. I am a computer science graduate and software developer. I have just finished my degree and am off into the world. I have an interest in <a href="{{ site.flickr_url }}" alt="My Flickr Site">photography</a> and a weakness for all things mac.
 </p>
 <img style="float: right; width 160px; min-width: 160px; max-width: 160px; height: auto; margin-top: 1.5em;" src="img/avatar.jpg" alt="my face" />
-
 <br style="clear: both;" />
+</div>
 
 You can usually find me messing around with some form of software or another, and this has lead to the creation of many [projects]({{site.url}}/projects.html). When I have the time, or feel the need, I like to post my thoughts on my [Blog][blog].
 
