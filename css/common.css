@@ -43,9 +43,6 @@ header a {
 
 body {
 	font: 1.4em Georgia, "Bookman Old Style", Times, Serif;
-}
-
-body, body {
 	background: #FFF none;
 	color: #333;
 }
@@ -91,6 +88,35 @@ section#main nav a.current, section#main nav a:hover {
 }
 .content a:visited { color: #0d7581; }
 .content a:hover { text-decoration: underline; }
+
+.content blockquote:before {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	content: "“";
+	font-size: 2em;
+}
+
+.content blockquote:after {
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+	content: "”";
+	font-size: 2em;
+}
+
+.content blockquote {
+	position: relative;
+	padding: 15px 30px 15px 40px;
+	font-style: italic;
+	font-weight: bold;
+	margin: 1em 0 1em 1.5em;
+}
+
+.content blockquote p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
 
 .content img {
 	display: block;
