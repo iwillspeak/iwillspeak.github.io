@@ -205,9 +205,8 @@ pre {
 }
 
 .postheader .info {
-	padding: 0 0 5px;
+	padding: 0 0 3px;
 	margin: 0;
-	vertical-align: center;
 	position: absolute;
 	width: 140px;
 	right: 0;
@@ -224,6 +223,6 @@ footer {
 	width: 100%;
 	text-align: center;
 	color: #DDD;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	margin: 2em auto;
 }
