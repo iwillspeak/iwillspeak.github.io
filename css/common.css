@@ -150,17 +150,16 @@ pre, p code {
 	background: #EEE none;
 	border-radius: 3px;
 	border: 1px solid #999;
-	font: Melno, Monaco, Consolas, Monospace;
+	font-family: Melno, Monaco, Consolas, Monospace;
 	color: #333;
 }
 
-p code {
+p > code {
 	display: inline;
 	padding: 1px 5px;
 }
 
 pre {
-	font-size: 1.2em;
 	display: block;
 	padding: 15px;
 }
