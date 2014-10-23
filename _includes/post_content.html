@@ -1,0 +1,13 @@
+{% if post %%}
+{% assign content = post.content %}
+{% else %}
+{% assign post = page %}
+{% endif %}
+
+<article class="content">
+  <div class="postheader">
+	<p class="info">{{ post.date | date_to_string }}</p>
+	<h1 id="title">{{ post.title }}</h1>
+  </div>
+  {{ content }}
+</article>

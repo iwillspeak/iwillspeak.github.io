@@ -11,6 +11,9 @@ title: Home
 	
 	<section id="main">
 		{% include navigation.html %}
+
+		{% assign post = site.posts.first %}
+		{% include post_content.html %}
 	</section>
 	
 	{% include footer.html %}
