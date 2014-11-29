@@ -69,7 +69,13 @@ section#main nav a {
 	text-decoration: none;
 }
 
+@-webkit-keyframes menuhover {
+	from {border-bottom-color: #FFF; }
+	to {border-bottom-color: #333; }
+}
+
 section#main nav a.current, section#main nav a:hover {
+	-webkit-animation: menuhover 0.5s;
 	border-bottom: 2px solid #333;
 	text-decoration: none;
 }
@@ -149,7 +155,7 @@ section#main nav a.current, section#main nav a:hover {
 pre, p code {
 	background: #EEE none;
 	border-radius: 3px;
-	border: 1px solid #999;
+	border-bottom: 2px solid #999;
 	font-family: Melno, Monaco, Consolas, Monospace;
 	color: #333;
 }
