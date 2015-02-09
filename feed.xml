@@ -14,9 +14,10 @@
  {% for post in site.posts %}
 
  <item>
-  <title>{{ post.tile }}</title>
-  <description>{{ post.excerpt }}</description>
+  <title>{{ post.title | xml_escape }}</title>
+  <description>{{ post.excerpt | xml_escape }}</description>
   <link>{{ site.url }}{{ post.url}}</link>
+  <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
   <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
  </item>
 

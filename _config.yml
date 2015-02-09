@@ -2,5 +2,6 @@ name: Plingdollar
 exclude: [etc]
 twitter_url: http://twitter.com/willspeak/
 flickr_url: http://flickr.com/photos/alphaindigo
+url: http://willspeak.me
 
 markdown: kramdown
