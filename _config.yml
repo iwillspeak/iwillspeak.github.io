@@ -7,9 +7,9 @@ url: http://willspeak.me
 markdown: kramdown
 
 prose:
-  rooturl: "_posts/"
+  rooturl: "_posts"
   siteurl: "http://willspeak.me"
-  media: "img/posts/"
+  media: "img/posts"
   metadata:
     _posts:
       - name: "layout"
