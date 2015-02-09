@@ -5,3 +5,18 @@ flickr_url: http://flickr.com/photos/alphaindigo
 url: http://willspeak.me
 
 markdown: kramdown
+
+prose:
+  rooturl: "_posts/"
+  siteurl: "http://willspeak.me"
+  media: "img/posts/"
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "blog"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
