@@ -2,7 +2,7 @@
 ---
 
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
  <title>{{ site.name }}</title>
  <description>{{ site.name }} is the various projects and musings of me, Will Speak. I am a computer science graduate and software developer. I have dabbled in a variety of programming languages. When it comes to user interfaces I’d rather have a command line. I have an interest in photography and a weakness for all things mac.</description>
@@ -10,6 +10,7 @@
  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
  <pubDate>{{ site.posts | map: 'date' | first | date_to_rfc822 }}</pubDate>
  <ttl>1800</ttl>
+ <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
 
  {% for post in site.posts %}
 
