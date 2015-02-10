@@ -7,10 +7,12 @@ title: Home
 <html>
 {% include html_head.html %}
 <body class="mainpage">
+  <section id="mainpage_header" style="background: #333 center no-repeat url('/img/home_background_003.jpg'); background-size: cover;">
 	{% include header.html %}
+	{% include navigation.html %}
+  </section>
 	
 	<section id="main">
-		{% include navigation.html %}
 
 		{% assign post = site.posts.first %}
 		{% include post_content.html %}

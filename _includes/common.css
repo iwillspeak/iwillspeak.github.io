@@ -15,12 +15,6 @@ header {
 	display: block;
 	overflow: hidden;
 	width: 100%;
-	background: #FFF none;
-}
-
-.mainpage header {
-	background: #333 center no-repeat url('/img/home_background_003.jpg');
-	background-size: cover;
 }
 
 header h1 {
@@ -54,12 +48,12 @@ section#main {
 	background: #FFF none;
 }
 
-section#main nav {
-	padding: 30px 0 10px;
+nav {
+	padding: 10px 0 30px;
 	text-align: center;
 }
 
-section#main nav a {
+nav a {
 	display: inline;
 	font-weight: bold;
 	font: 1.7em Kefa, "Bookman Old Style", Georgia, Times, Serif;
@@ -69,13 +63,27 @@ section#main nav a {
 	text-decoration: none;
 }
 
-@-webkit-keyframes menuhover {
-	from {border-bottom-color: #FFF; }
+.mainpage nav a {
+	color: #FFF;
+}
+
+@-webkit-keyframes menuhover-dark {
+	from {border-bottom-color: rgba(0, 0, 0, 0); }
 	to {border-bottom-color: #333; }
 }
 
-section#main nav a.current, section#main nav a:hover {
-	-webkit-animation: menuhover 0.5s;
+@-webkit-keyframes menuhover-light {
+	from {border-bottom-color: rgba(255, 255, 255, 0); }
+	to {border-bottom-color: #FFF; }
+}
+
+.mainpage nav a.current, .mainpage nav a:hover {
+	-webkit-animation: menuhover-light 0.5s;
+	border-bottom: 2px solid #FFF;
+}
+
+nav a.current, nav a:hover {
+	-webkit-animation: menuhover-dark 0.5s;
 	border-bottom: 2px solid #333;
 	text-decoration: none;
 }
