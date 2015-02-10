@@ -7,7 +7,7 @@
 	</div>
 	{% if page.article_excerpts %}
 		{{ post.excerpt | markdownify }}
-		<a class="readmore" href="{{ site.url }}{{post.url}}#title">Continue reading &rarr;</a>
+		<a class="readmore" href="{{post.url}}#title">Continue reading &rarr;</a>
 	{% endif %}
 </li>
 {% endfor %}
