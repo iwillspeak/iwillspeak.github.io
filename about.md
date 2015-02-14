@@ -14,7 +14,7 @@ title: About
 <br style="clear: both;" />
 </div>
 
-You can usually find me messing around with some form of software or another, and this has lead to the creation of many [projects]({{site.url}}/projects.html). When I have the time, or feel the need, I like to post my thoughts on my [Blog][blog].
+You can usually find me messing around with some form of software or another, and this has lead to the creation of many [projects](/projects.html). When I have the time, or feel the need, I like to post my thoughts on my [Blog][blog].
 
 You can follow me on Twitter as [@willspeak][twitter]. Don't expect me to tell you anything more interesting than the coffee i'm drinking though.
 
@@ -22,6 +22,6 @@ You can follow me on Twitter as [@willspeak][twitter]. Don't expect me to tell y
 
 It is a UNIX thing. It is a shell thing. It is what I say in my head every time I type `!$`, my second favourite shell command after `!!` (or possibly `sudo !!`).
 
-[blog]: {{ site.url }}/blog.html
+[blog]: /blog.html
 [twitter]: {{ site.twitter_url }}
 [flickr]: {{ site.flickr_url }}
