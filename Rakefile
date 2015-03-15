@@ -5,7 +5,7 @@ DRAFTS_DIR = '_drafts'
 POSTS_DIR = '_posts'
 SITE_DIR = '_site'
 
-directory '#{DRAFTS_DIR}'
+directory "#{DRAFTS_DIR}"
 
 class String
   def slugify()
@@ -20,7 +20,7 @@ def write_post(f, header, body)
 end
 
 desc "Create a new draft post"
-task :new, [:title] => '#{DRAFTS_DIR}' do |task, args|
+task :new, [:title] => "#{DRAFTS_DIR}" do |task, args|
   title = args[:title] || Date.today.strftime("Draft Post %F")
   mapped_title = title.slugify()
   header = {
