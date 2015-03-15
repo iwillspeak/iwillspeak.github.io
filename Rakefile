@@ -6,8 +6,10 @@ POSTS_DIR = '_posts'
 
 directory '#{DRAFTS_DIR}'
 
-def normalise_title(title)
-  title.strip.downcase.gsub(/\W+/, '-')
+class String
+  def slugify()
+    self.strip.downcase.gsub(/\W+/, '-')
+  end
 end
 
 def write_post(f, header, body)
@@ -19,11 +21,10 @@ end
 desc "Create a new draft post"
 task :new, [:title] => '#{DRAFTS_DIR}' do |task, args|
   title = args[:title] || "New Post"
-  mapped_title = normalise_title(title)
+  mapped_title = title.slugify()
   header = {
     "title" => title,
-    "layout" => "post",
-    "published" => false
+    "layout" => "post"
   }
 
   File.open("#{DRAFTS_DIR}/#{mapped_title}.md", "w") do |f|
@@ -43,7 +44,7 @@ task :publish, [:file] do |task, args|
   header["published"] = true
 
   post_name = header["title"] || File.basename(file, ".*")
-  post_name = normalise_title(post_name)
+  post_name = post_name.slugify()
   post_name = Date.today.strftime("%F-#{post_name}")
 
   File.open("#{POSTS_DIR}/#{post_name}.md", "w") do |f|
