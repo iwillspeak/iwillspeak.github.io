@@ -3,6 +3,7 @@ require 'rake/clean'
 
 DRAFTS_DIR = '_drafts'
 POSTS_DIR = '_posts'
+SITE_DIR = '_site'
 
 directory '#{DRAFTS_DIR}'
 
@@ -20,7 +21,7 @@ end
 
 desc "Create a new draft post"
 task :new, [:title] => '#{DRAFTS_DIR}' do |task, args|
-  title = args[:title] || "New Post"
+  title = args[:title] || Date.today.strftime("Draft Post %F")
   mapped_title = title.slugify()
   header = {
     "title" => title,
@@ -51,3 +52,12 @@ task :publish, [:file] do |task, args|
     write_post(f, header, body)
   end
 end
+
+desc "Build the site"
+task :build do
+  sh %{jekyll build}
+end
+
+task :default => :build
+
+CLEAN << SITE_DIR
