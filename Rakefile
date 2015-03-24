@@ -40,7 +40,7 @@ task :publish, [:file] do |task, args|
   draft = File.open(file, "r").read
 
   header = YAML.load(draft)
-  body = draft.split("--", 3)[2]
+  body = draft.split("---", 3)[2]
 
   header["published"] = true
 
