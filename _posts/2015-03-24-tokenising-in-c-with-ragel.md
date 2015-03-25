@@ -89,13 +89,13 @@ public:
         do {
     
             if (cs >= ExampleLexer_first_final) {
-                token->type = End;
+                token->type = Token::End;
             }
     
             %%write exec;
             
             if (cs == ExampleLexer_error) {
-                token->type = None
+                token->type = Token::None
                 return token;
             }
             
@@ -126,3 +126,4 @@ The one last thing we need to define is the macro which captures the token. This
 
 And there you go. All done. We can now pass a simple buffer to our lexer and keep on calling `next()` until we run out of tokens. This lecture will return the tokens one at a time as it reads them. You can have Ragel tokenise the whole input if you want by removing the `fbreak` calls from the actions and looping until you receive either `None` or `End`.
 
+The full code for this article is in [this Gist](https://gist.github.com/iwillspeak/cd27b740d658a6f38c8c). 
