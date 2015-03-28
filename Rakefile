@@ -19,6 +19,20 @@ def write_post(f, header, body)
   f.write(body)
 end
 
+def most_recent_draft()
+  (Dir.glob("#{DRAFTS_DIR}/*.md").sort_by { |f| File.mtime f }).last
+end
+
+def find_draft_from_hint(hint)
+  return most_recent_draft if hint.nil?
+
+  if File.exists? hint
+    hint
+  else
+    Dir.glob("#{DRAFTS_DIR}/*#{hint}*.md").first
+  end
+end
+
 desc "Create a new draft post"
 task :new, [:title] => "#{DRAFTS_DIR}" do |task, args|
   title = args[:title] || Date.today.strftime("Draft Post %F")
@@ -33,9 +47,15 @@ task :new, [:title] => "#{DRAFTS_DIR}" do |task, args|
   end
 end
 
+desc "Edit a Draft"
+task :edit, [:globs] do |task, args|
+  file = find_draft_from_hint(args[:globs])
+  spawn %{#{ENV["EDITOR"]} "#{file}"}
+end
+
 desc "Publish a draft"
-task :publish, [:file] do |task, args|
-  file  = args[:file] || (Dir.glob("#{DRAFTS_DIR}/*.md").sort_by { |f| File.mtime f }).last
+task :publish, [:globs] do |task, args|
+  file = find_draft_from_hint(args[:globs])
   
   draft = File.open(file, "r").read
 
@@ -51,6 +71,11 @@ task :publish, [:file] do |task, args|
   File.open("#{POSTS_DIR}/#{post_name}.md", "w") do |f|
     write_post(f, header, body)
   end
+end
+
+desc "Serve the site with jekyll"
+task :serve do
+  sh %{jekyll serve --watch --drafts}
 end
 
 desc "Build the site"
