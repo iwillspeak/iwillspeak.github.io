@@ -24,6 +24,6 @@ authors = ["..."]
     path = "main.rs"
 {% endhighlight %}
 
-If you're creating a library rather than an executable you'll ned to use the `[lib]` section instead of the `[[bin]]` array. There's more information about what you can configure for each target [in the cargo docs][cargo_target]. You can see the results in action in [a simple hand-written lexer I wrote].
+If you're creating a library rather than an executable you'll ned to use the `[lib]` section instead of the `[[bin]]` array. There's more information about what you can configure for each target [in the cargo docs][cargo_target]. You can see the results in action in [a simple hand-written lexer I wrote](https://gist.github.com/iwillspeak/a8a8c0f03524d8ce6d19).
 
   [cargo_target]: http://doc.crates.io/manifest.html#configuring-a-target
