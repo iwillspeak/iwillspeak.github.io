@@ -1,0 +1,40 @@
+digraph Combined {
+	graph [rankdir=LR, margin=0.01]
+	node [shape=circle]
+
+	// set up special states here (pseudo start and final)
+	"" [shape=none]
+
+	"" -> S
+
+	// Var bit
+	v3 [shape=doublecircle]
+
+	S -> v1 [label="&epsilon;"]
+
+	v1 -> v2 [label="a-z"]
+	v2 -> v3 [label="&epsilon;"]
+	v3 -> v3 [label="a-z0-9"]
+
+	// Num bit
+	n2 [shape=doublecircle]
+
+	S -> n1 [label="&epsilon;"]
+
+	n1 -> n2 [label="0-9"]
+	n2 -> n2 [label="0-9"]
+
+	// Plus bit
+	p2 [shape=doublecircle]
+
+	S -> p1 [label="&epsilon;"]
+	
+	p1 -> p2 [label="+"]
+
+	// whitespace bit
+	w1 [shape=doublecircle]
+
+	S -> w1 [label="&epsilon;"]
+
+	w1 -> w1 [label="\\s"]
+}

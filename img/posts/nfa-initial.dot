@@ -1,0 +1,38 @@
+digraph Var {
+	graph [rankdir=LR, margin=0.01]
+	node [shape=circle]
+
+	// set up special states here (pseudo start and final)
+	"" [shape=none]
+	3 [shape=doublecircle]
+
+	"" -> 1
+	1 -> 2 [label="a-z"]
+	2 -> 3 [label="&epsilon;"]
+	3 -> 3 [label="a-z0-9"]
+}
+
+digraph Num {
+	graph [rankdir=LR, margin=0.01]
+	node [shape=circle]
+
+	// set up special states here (pseudo start and final)
+	"" [shape=none]
+	2 [shape=doublecircle]
+
+	"" -> 1
+	1 -> 2 [label="0-9"]
+	2 -> 2 [label="0-9"]
+}
+
+digraph Plus {
+	graph [rankdir=LR, margin=0.01]
+	node [shape=circle]
+
+	// set up special states here (pseudo start and final)
+	"" [shape=none]
+	2 [shape=doublecircle]
+
+	"" -> 1
+	1 -> 2 [label="+"]
+}
