@@ -49,4 +49,4 @@ Time passes. Eventually the user is presented with the finished product. It's no
 
 *"It's not quite what I was looking for"* the user replies. *"It is a nice cup holder though. And I suppose I could get a new job in Svalbard. Then I would travel to work over snow and ice each day and this would work great"*.
 
-*"I knew you'd like it"* the development manage smiles. *"Just wait until you see version 2.0"*.
+*"I knew you'd like it"* the development manager smiles. *"Just wait until you see version 2.0"*.
