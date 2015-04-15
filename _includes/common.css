@@ -128,15 +128,44 @@ nav a.current, nav a:hover {
 	margin-bottom: 0;
 }
 
+.content img,
+.content pre,
+.content p code {
+	border-radius: 3px;
+	border-bottom: 2px solid #999;
+}
+
 .content img {
 	display: block;
-	border: 1px solid #999;
 	padding: 5px;
-	border-radius: 3px;
 	background: #EEE none;
 	margin: 0 auto;
 	max-width: 95%;
 	height: auto;
+}
+
+.content table table,
+.content table th,
+.content table td {
+	border-collapse: collapse;
+}
+
+.content table {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.content table td,
+.content table th {
+	padding: 10px;
+}
+
+.content table thead {
+	border-bottom: 1px solid #999;
+}
+
+.content table tfoot {
+	border-top: 1px solid #999;
 }
 
 .content img.avatar {
@@ -147,7 +176,7 @@ nav a.current, nav a:hover {
 	border-radius: 90px;
 }
 
-.content .caption {
+content .caption {
     display: block;
 	text-align: center;
 	font-style: italic;
@@ -156,20 +185,19 @@ nav a.current, nav a:hover {
 	font-size: 0.8em;
 }
 
-pre, p code {
+.content pre,
+.content p code {
 	background: #EEE none;
-	border-radius: 3px;
-	border-bottom: 2px solid #999;
 	font-family: Melno, Monaco, Consolas, Monospace;
 	color: #333;
 }
 
-p > code {
+.content p > code {
 	display: inline;
 	padding: 1px 5px;
 }
 
-pre {
+.content pre {
 	display: block;
 	padding: 15px;
 }
