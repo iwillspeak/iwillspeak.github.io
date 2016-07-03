@@ -176,7 +176,7 @@ nav a.current, nav a:hover {
 	border-radius: 90px;
 }
 
-content .caption {
+.content .caption {
     display: block;
 	text-align: center;
 	font-style: italic;
