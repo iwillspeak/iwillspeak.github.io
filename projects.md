@@ -8,6 +8,7 @@ title: Projects
 
 I have many projects on the go at [Bitbucket](http://bitbucket.org/iwillspeak) and [Github](http://github.com/iwillspeak); most of them are just for fun. Here are some of the jewels in the crown:
 
+* [Ullage](http://github.com/iwillspeak/ullage) - A simple language implementation in Rust.
 * [Rust Onig](http://github.com/rust-onig/rust-onig) - Rust bindings for the Oniguruma regular expression library.
 * [Prattle](http://github.com/iwillspeak/Prattle) - A foolish or inconsequential experiment in precedence parsing. A Patt-style operator precedence parser written in Ruby.
 * [Snooper](http://github.com/iwillspeak/snooper) - Spying on your files and running your tests. A ruby gem to watch for file changes and run arbitrary commands. 
