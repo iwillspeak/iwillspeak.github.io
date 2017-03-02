@@ -4,7 +4,7 @@ layout: post
 published: true
 ---
 
-At work I'm paid to write C#. At home I'm a dedicated Mac user. When I initially learnt C# for the job interview years back I had to use [Mono](http://www.mono-projecct.com) to run it on my Mac. A lot has changed in the .NET world since then, most notably the arrival of [.NET Core](https://www.microsoft.com/net/core). So I finally decided to give it a try.
+At work I'm paid to write C#. At home I'm a dedicated Mac user. When I initially learnt C# for the job interview years back I had to use [Mono](http://www.mono-project.com) to run it on my Mac. A lot has changed in the .NET world since then, most notably the arrival of [.NET Core](https://www.microsoft.com/net/core). So I finally decided to give it a try.
 
 The installation on OS X was really simple. So far I'm really enjoying compiling stuff from the command line with the `dotnet` tool. `Project.json` files look to be a lot easier to branch and merge than `.csproj` files. Impressed with the whole thing I decided to knock together a quick project to give the whole thing a proper shakedown.
 
