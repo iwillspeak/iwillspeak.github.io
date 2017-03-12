@@ -1,5 +1,5 @@
 ---
-title: A Rusty Guid to Tokenising by Hand
+title: A Rusty Guide to Tokenising by Hand
 layout: post
 published: true
 ---
