@@ -18,7 +18,7 @@ Observable.FromEvent<RoutedEventArgs,SecureString>(a =>
      return proxy;
 },
 h => Password.PasswordChanged += h,
-h => Password.PasswrodChanged -= h)
+h => Password.PasswordChanged -= h)
     .BindTo(this, x => x.ViewModel.Password);
 {% endhighlight %}
 
