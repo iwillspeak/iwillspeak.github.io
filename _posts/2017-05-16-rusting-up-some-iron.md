@@ -56,6 +56,23 @@ contents/
             └── librure.dylib
 ```
 
+On Windows, where we are targeting more than one RID it is a bit more complex:
+
+```
+contents/
+└── runtimes
+    └── win-x64
+    |   └── native
+    |       ├── rure.lib
+    |       ├── rure.d
+    |       └── rure.dll
+    └── win-x68
+        └── native
+            ├── rure.lib
+            ├── rure.d
+            └── rure.dll
+```
+
 We can then pack this up into a NuGet package with the following `.nuspec` file:
 
 ```xml
