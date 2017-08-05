@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/willspeak
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://willspeak.me
+  * I am willspeak (https://keybase.io/willspeak) on keybase.
+  * I have a public key with fingerprint 4167 B68D 09F3 B9DF B740  229E FDF5 9F16 C78F 372E
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010187e7d38950cf0ecf9568bf05657e09f8bc986bc18f45b9f27834ad06b42d0d5b0a",
+      "fingerprint": "4167b68d09f3b9dfb740229efdf59f16c78f372e",
+      "host": "keybase.io",
+      "key_id": "fdf59f16c78f372e",
+      "kid": "010187e7d38950cf0ecf9568bf05657e09f8bc986bc18f45b9f27834ad06b42d0d5b0a",
+      "uid": "733119e8524fef090eac58c22545bb19",
+      "username": "willspeak"
+    },
+    "service": {
+      "hostname": "willspeak.me",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1501951080,
+  "expire_in": 157680000,
+  "prev": "03550edeac610e609fc66581778bd2262d241fbf77724a4d1ed0884109fe48c8",
+  "seqno": 4,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.73
+Comment: https://keybase.io/crypto
+
+yMIbAnicrZJtSBRBGMdPzegsK4tePwhtBAV2zczu7M6eFBH4yTJ6IQqKc2dnxlu9
+u732zjOrgyB6s0I/BEEFQWVFBVlgRBlqGRUZSUVEJAYSctRBr4RF0azUl+hj82WY
+Z37///yfh+krLQqUFMx4WtOwallXS8HD3qONgU17Pkd3KNRlzUp4h9LAxzYeYzyV
+jjQ4TAkrAAJIDG4wlZgY2AJwW5hYJ1QArGODA1MQaptEpzYkQsPUFMggqmYxoFMN
+McAwBZZSoQgnUce9pOck0tJWg7pBdcKkXKUmE9TQAEImF0xgU0DdNohQDcSlMOqm
+fIUMR60UDzmurMlDZCzeP/j/nLtxzM5QVQhNTjDSBBfABNyyMbERwlJKoemDKe4l
+rDiXdJMTi6WS3GpQshWKLGccm/uT9Vv5GwnF/dBJz027thuTN9F0Ohn2henm5BjJ
+aeS3R4Q6CSbnKAUZ7qUcN6GEoSTttOObQgygiSEgoELh25KOxyOOT2BDJ0Au/xme
+8YejYgw4kz3oEHBdzsLWdUygYRDKENIRQxoUVBiGgTRLY5AzQIgGJcg1YhPF72pr
+wlXCmoxp1UnLlFOXsNKNHleyt3s2jwsUlATGFxf6/ytQEpz659eplRMCpx/He1vb
+C9EdJa7Pw8GJi/ah5Ud+dN3Hx4vnZ2m+frO6MHq3eHT0buuSY2vEYNlI+cjA/rq+
+yMkbn2oPZL80t11v352bu15FD8TN+Dd2uP9R0etdG8+V1jRduLWl5nObW33p+bWe
+2tJv1TuH9gz0/VzZOTqUX1uUPdjOBvsWs1Dm/ZWeR5W5e9qHzMOoDpPkcj94Ep7z
+FofKg9Ne9ec71L35Q62Ta3IrhqdXPR/Z1qIuLltwK7Sy6czhNufFunVe5+zh6BSB
+olbRm47zOLb13pD5Lpftzn8Ndk/Ibj+16GwVu/h95qzS1Udebqgo/DDp45bKgaXP
+ztdfMk94nVfpL6slQa8=
+=XxJR
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/willspeak
+
+==================================================================
