@@ -6,8 +6,10 @@ title: Projects
 
 # My Projects
 
-I have many projects on the go at [Bitbucket](http://bitbucket.org/iwillspeak) and [Github](http://github.com/iwillspeak); most of them are just for fun. Here are some of the jewels in the crown:
+I have many projects on the go at [Github](http://github.com/iwillspeak); most of them are just for fun. Some of my older stuff is also on [Bitbucket](http://bitbucket.org/iwillspeak). Here are some of the jewels in the crown:
 
+* [IronRure](http://github.com/iwillspeak/IronRure) - .NET bindings for the Rust `regex` crate.
+* [PollyTick](http://github.com/iwillspeak/pollytick) - Execution statistics observation for [Polly](http://thepollyproject.org/)
 * [Ullage](http://github.com/iwillspeak/ullage) - A simple language implementation in Rust.
 * [Rust Onig](http://github.com/rust-onig/rust-onig) - Rust bindings for the Oniguruma regular expression library.
 * [Prattle](http://github.com/iwillspeak/Prattle) - A foolish or inconsequential experiment in precedence parsing. A Patt-style operator precedence parser written in Ruby.
