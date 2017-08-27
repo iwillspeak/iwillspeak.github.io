@@ -6,6 +6,8 @@ published: true
 
 Rust is one of my favourite languages. One of it's great strengths is its ecosystem of *crates*, another is the FFI system which enables writing native extensions when performance or safety is required. Over the last week I've been pulling these two together in [IronRure](https://github.com/iwillspeak/Ironrure), a .NET Standard wrapper around the Rust `regex` crate.
 
+![It's a Crate in a Wrapper. Get it?](/img/posts/Crate_Wrapper.png)
+
 I started this with zero knowledge of FFI in C#. I was pleasantly surprised with how easy P/Invoke was to use. There's plenty of documentation on its use from both [Microsoft](https://docs.microsoft.com/en-us/dotnet/articles/standard/native-interop) and [Mono](http://www.mono-project.com/docs/advanced/pinvoke/). I feel I should pull together the lessons I've learned though. Don't hesitate to comment if you think I'm *Doing it Wrong*.
 
 ## Stage 1 - Quick and Dirty
