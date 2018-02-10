@@ -4,7 +4,7 @@ layout: post
 published: true
 ---
 
-I've been spending most of my time recently performance profiling and optimising one of our main services. Part of it's job involves exposing data objects through a generic interface. The abstraction allows public properties on each object to be read using an untyped indexer. To do this we look up all the properties of each data object via reflection and cache them so later reads and writes are quicker. Turns out this caching is not enough. With many short-lived objects we ended up almost half our time in some performance critical paths just populating this reflection cache. The initial implementation is naïve, but what can be done about it?
+I've been spending most of my time recently performance profiling and optimising one of our main services. Part of its job involves exposing data objects through a generic interface. The abstraction allows public properties on each object to be read using an untyped indexer. To do this we look up all the properties of each data object via reflection and cache them so later reads and writes are quicker. Turns out this caching is not enough. With many short-lived objects we ended up almost half our time in some performance critical paths just populating this reflection cache. The initial implementation is naïve, but what can be done about it?
 
 To get started imagine that we have the following two C# classes:
 
