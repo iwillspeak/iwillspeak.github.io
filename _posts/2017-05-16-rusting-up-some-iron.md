@@ -68,7 +68,7 @@ contents/
     │       ├── rure.lib
     │       ├── rure.d
     │       └── rure.dll
-    └── win-x68
+    └── win-x86
         └── native
             ├── rure.lib
             ├── rure.d
