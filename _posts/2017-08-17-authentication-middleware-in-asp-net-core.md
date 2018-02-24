@@ -137,3 +137,7 @@ Identity
 {% endhighlight %}
 
 You can find the full code for this post [in a gist](https://gist.github.com/iwillspeak/1e2d78f36c89a898891148c47befdf4b/9df41d2c17bde20c4bb787f3eb28ef901eb2f661).
+
+**EDIT**: For an updated version of this authentication scheme which works with ASP .NET Core 2.0 check out [Once More with Handlers][new-post].
+
+ [new-post]: /2018/02/24/once-more-with-handlers.html
