@@ -50,7 +50,7 @@ end
 desc "Edit a Draft"
 task :edit, [:globs] do |task, args|
   file = find_draft_from_hint(args[:globs])
-  spawn %{#{ENV["EDITOR"]} "#{file}"}
+  spawn %{writer "#{file}"}
 end
 
 desc "Publish a draft"
