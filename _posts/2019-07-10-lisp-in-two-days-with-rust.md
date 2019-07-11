@@ -21,6 +21,8 @@ The first step on the road to any programming language is parsing. We will begin
 
 Our tokeniser works logically by running a set of regular expressions over the source text and choosing the token kind based on which expression matched. For our use case though we don't need a full regex engine and can make do with a [state machine][state-machines] built from a few `match` statements. For a more in-depth discussion check out [my previous blogpost on this][tokenising].
 
+![tokens](/img/posts/tokens.png "Our tokens ready for parsing")
+
 The tokens we need to recognise for LISP are pretty simple:
 
  * `(` and `)` for grouping [S-expressions][sexpr]
