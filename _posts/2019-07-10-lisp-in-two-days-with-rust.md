@@ -4,7 +4,7 @@ layout: post
 published: true
 ---
 
-As a sidetrack from the development of [my programming language][ullage] I've spent some time developing a LISP. The plan is to use the language as a testing ground for experimentation with transforming an AST in Rust. The syntax of LISP is simple and was developed to be easy to parse. I figured it would make a good starting point for an experimental compiler.
+As a sidetrack from the development of [my programming language][ullage] I've spent some time [developing a LISP][f1]. The plan is to use the language as a testing ground for experimentation with transforming an AST in Rust. The syntax of LISP is simple and was developed to be easy to parse. I figured it would make a good starting point for an experimental compiler.
 
 The language I'll be developing here is heavily inspired by the [lispy Scheme derivative][lispy]. Some elements of behaviour are cribbed directly from [Emacs LISP][elisp] as it was the LISP implementation I had to hand. By the end we should have a language capable of evaluating expressions like the following:
 
@@ -452,6 +452,8 @@ Note that the global environment is initialised before the loop so state from ea
 
 With the basics in place it's time to experiment. It's easy to add new callable functions to the "standard library" by including them in the global scope. The language outlined in this post doesn't have support for user-defined functions or any form of loops. Another big LISP feature missing is the ability to `quote` and `eval` forms to turn them from source code into data and back.
 
+The source for the programming language experiment behind this post is [available on GitHub][f1].
+
  [ullage]: https://github.com/iwillspeak/ullage/
  [lispy]: https://norvig.com/lispy.html
  [elisp]: https://en.wikipedia.org/wiki/Emacs_Lisp
@@ -459,3 +461,4 @@ With the basics in place it's time to experiment. It's easy to add new callable 
  [tokenising]: https://willspeak.me/2015/04/15/a-rusty-guide-to-tokenising-by-hand.html
  [sexpr]: https://en.wikipedia.org/wiki/S-expression
  [`codespan`]: https://crates.io/crates/codespan
+ [f1]: https://github.com/iwillspeak/formula-one
