@@ -104,8 +104,8 @@ loop {
             }
         };
 
-        // If we transitioned then accept the character by moving
-        // on our `end` index.
+        // If we transitioned then accept the character
+        // by moving on our `end` index.
         if let Some(next_state) = next {
             state = next_state;
             end += c.len_utf8();
@@ -176,7 +176,7 @@ We can recognise LISP with just a single token of lookahead. We will use the Rus
 struct ParseState<I: Iterator<Item = ast::Token>>(std::iter::Peekable<I>);
 ```
 
-Our tope level parse function examines the next token. If it is an atom then we parse it directly, otherwise we delegate to `parse_form` to read the body of a form.
+Our top level parse function examines the next token. If it is an atom then we parse it directly, otherwise we delegate to `parse_form` to read the body of a form.
 
 ```rust
 fn parse_expr(&mut self) -> ast::Expr {
@@ -385,7 +385,7 @@ Define evaluates its expression and inserts the result into the environment hash
     }
 ```
 
-For function calls we search for a Callable` in the environment, evaluate all of the arguments, and make the call:
+For function calls we search for a `Callable` in the environment, evaluate all of the arguments, and make the call:
  
 ```rust
     Call(_, sym, args, _) => {
