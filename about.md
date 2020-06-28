@@ -28,4 +28,4 @@ It is a UNIX thing. It is a shell thing. It is what I say in my head every time 
 [blog]: /blog.html
 [twitter]: {{ site.twitter_url }}
 [flickr]: {{ site.flickr_url }}
-[instagram]: {{ site.insta_url }}
+[instagram]: {{ site.instagram_url }}
