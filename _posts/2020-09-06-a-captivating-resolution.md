@@ -189,14 +189,7 @@ As well as our existing `Define` that needs updating to add a `Variable` to our 
                       ; Storage = storage }::ctx.Locals
 ```
 
-With all this in place binding non-capturing lambdas is fairly simple. A new context is created with the current context as its parent. We define its argument and then bind the body with that new context. So long as the lambda doesn't reference a variable outside its scope all should be good.
-
-<table>
-<thead><tr><th>Syntax</th><th>Bound</th></tr></thead>
-<tbody>
-<tr><td><pre>Lambda ("x",Load "x")</pre></td><td><pre>Lambda (Load Arg)</pre></td></tr>
-</tbody>
-</table>
+With all this in place binding non-capturing lambdas is fairly simple. A new context is created with the current context as its parent. We define its argument and then bind the body with that new context. 
 
 ```fsharp
 let rec private bind (ctx: BindCtx) = function
@@ -206,6 +199,15 @@ let rec private bind (ctx: BindCtx) = function
         lambdaCtx.DefineArg formal
         bind lambdaCtx body |> Bound.Lambda
 ```
+
+So long as the lambda doesn't reference a variable outside its scope all should be good.
+
+<table>
+<thead><tr><th>Syntax</th><th>Bound</th></tr></thead>
+<tbody>
+<tr><td><pre>Lambda ("x",Load "x")</pre></td><td><pre>Lambda (Load Arg)</pre></td></tr>
+</tbody>
+</table>
 
 To resolve variable references from parent scopes things get a little more complex. If a lambda references a variable from one of the enclosing scopes it is said to 'capture' or 'close over' that value.
 
