@@ -92,12 +92,12 @@ nav a.current, nav a:hover {
 	line-height: inherit;
 }
 
-.content a {
+.content a, footer a.social-icon {
 	text-decoration: none;
 	color: #16b1c3;
 }
-.content a:visited { color: #0d7581; }
-.content a:hover { text-decoration: underline; }
+.content a:visited, footer a.social-icon:visited { color: #0d7581; }
+.content a:hover, footer a.social-icon:hover { text-decoration: underline; }
 
 .content blockquote:before {
 	position: absolute;
@@ -262,4 +262,20 @@ footer {
 	color: #DDD;
 	font-size: 0.9em;
 	margin: 2em auto;
+}
+
+footer a.social-icon {
+	background-position: 0 60%;
+	padding: 0 20px 0 28px;
+	background-repeat: no-repeat;
+	text-decoration: none;
+}
+
+footer a.twitter {
+	background-image: url(/img/Twitter_Logo_Blue.svg);
+	background-size: 30px;
+}
+
+footer a.twitch {
+	background-image: url(/img/TwitchGlitchPurple.svg);
 }
