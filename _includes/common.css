@@ -21,7 +21,6 @@
 	--fnt-base-size: 16px;
 }
 
-
 /* Apply a dark color scheme */
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -32,6 +31,24 @@
 		--col-fg-dimmed: var(--col-light-dimmed);
 		--col-fg-subtle: var(--col-light-subtle);
 	}
+}
+
+html[data-color-mode="dark"] {
+	--col-bg: var(--col-dark);
+	--col-bg-dimmed: var(--col-dark-dimmed);
+	--col-bg-subtle: var(--col-dark-subtle);
+	--col-fg: var(--col-light);
+	--col-fg-dimmed: var(--col-light-dimmed);
+	--col-fg-subtle: var(--col-light-subtle);
+}
+
+html[data-color-mode="light"] {
+	--col-bg: var(--col-light);
+	--col-bg-dimmed: var(--col-light-dimmed);
+	--col-bg-subtle: var(--col-light-subtle);
+	--col-fg: var(--col-dark);
+	--col-fg-dimmed: var(--col-dark-dimmed);
+	--col-fg-subtle: var(--col-dark-subtle);
 }
 
 /* Tablets */
@@ -86,7 +103,8 @@ h6 {
 header {
 	display: block;
 	overflow: hidden;
-	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
 }
 
 #mainpage_header {
@@ -372,4 +390,38 @@ footer a.twitter {
 
 footer a.twitch {
 	background-image: url(/img/TwitchGlitchPurple.svg);
+}
+
+#dark-mode-placeholder {
+	display: block;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	background-color: var(--col-bg);
+	border: 1px solid var(--col-fg-dimmed);
+	border-radius: 5px;
+	text-align: center;
+}
+
+#dark-mode-placeholder a {
+	display: block;
+	padding: 5px;
+	width: 20px;
+	height: 20px;
+}
+
+#dark-mode-placeholder a,
+#dark-mode-placeholder svg {
+	color: var(--col-fg-dimmed);
+	fill: var(--col-fg-dimmed);
+}
+
+#dark-mode-placeholder:hover {
+	border-color: var(--col-fg);
+}
+
+#dark-mode-placeholder:hover a,
+#dark-mode-placeholder:hover svg {
+	color: var(--col-fg);
+	fill: var(--col-fg);
 }
