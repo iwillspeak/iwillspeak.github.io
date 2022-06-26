@@ -1,15 +1,87 @@
-h1, h2, h3, h4, h5, h6 {
+/* Base - Mobiles and above, light mode by default */
+:root {
+	/* COLOURS */
+	--col-accent: #16b1c3;
+	--col-accent-dimmed: #0d7581;
+	--col-light: #FFF;
+	--col-light-subtle: #EEE;
+	--col-light-dimmed: #999;
+	--col-dark: #222;
+	--col-dark-subtle: #333;
+	--col-dark-dimmed: #666;
+
+	--col-bg: var(--col-light);
+	--col-bg-dimmed: var(--col-light-dimmed);
+	--col-bg-subtle: var(--col-light-subtle);
+	--col-fg: var(--col-dark);
+	--col-fg-dimmed: var(--col-dark-dimmed);
+	--col-fg-subtle: var(--col-dark-subtle);
+
+	/* FONTS */
+	--fnt-base-size: 16px;
+}
+
+
+/* Apply a dark color scheme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--col-bg: var(--col-dark);
+		--col-bg-dimmed: var(--col-dark-dimmed);
+		--col-bg-subtle: var(--col-dark-subtle);
+		--col-fg: var(--col-light);
+		--col-fg-dimmed: var(--col-light-dimmed);
+		--col-fg-subtle: var(--col-light-subtle);
+	}
+}
+
+/* Tablets */
+@media screen and (min-width: 500px) {
+	:root {
+		--fnt-base-size: 18px;
+	}
+}
+
+/* Tablets */
+@media screen and (min-width: 980px) {
+	:root {
+		--fnt-base-size: 22px;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: Kefa, "Bookman Old Style", Georgia, Times, Serif;
 	font-weight: bold;
 	margin: 0.5em 0 0.3em;
 }
 
-h1 { font-size: 2.5em; }
-h2 { font-size: 2.1em; }
-h3 { font-size: 2.0em; }
-h4 { font-size: 1.8em; }
-h5 { font-size: 1.7em; }
-h6 { font-size: 1.6em; }
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2.1em;
+}
+
+h3 {
+	font-size: 2.0em;
+}
+
+h4 {
+	font-size: 1.8em;
+}
+
+h5 {
+	font-size: 1.7em;
+}
+
+h6 {
+	font-size: 1.6em;
+}
 
 header {
 	display: block;
@@ -26,7 +98,7 @@ header h1 {
 	font-size: 4.3em;
 	text-align: center;
 	margin: 100px auto 10px;
-	color: #222;
+	color: var(--col-fg);
 }
 
 header a {
@@ -34,22 +106,23 @@ header a {
 }
 
 .mainpage header h1 {
-	color: #FFF;
+	color: var(--col-bg);
 	margin: 350px auto 40px;
-	text-shadow: #333 0 2px;
+	text-shadow: var(--col-fg-subtle) 0 2px;
 }
 
 body {
-	font: 1.4em Georgia, "Bookman Old Style", Times, Serif;
-	background: #FFF none;
-	color: #333;
+	font: var(--fnt-base-size) Georgia, "Bookman Old Style", Times, Serif;
+	background: var(--col-bg) none;
+	color: var(--col-fg-subtle);
 }
 
 section#main {
 	display: block;
-	width: 800px;
+	max-width: 800px;
 	margin: 0 auto;
-	background: #FFF none;
+	padding: 0 15px;
+	background: var(--col-bg) none;
 }
 
 nav {
@@ -63,7 +136,7 @@ nav a {
 	font: 1.7em Kefa, "Bookman Old Style", Georgia, Times, Serif;
 	padding: 2px;
 	margin: 5px 15px;
-	color: #333;
+	color: var(--col-fg-subtle);
 	border-bottom: 2px solid rgba(51, 51, 51, 0);
 	text-decoration: none;
 	-webkit-transition: border-color 0.5s;
@@ -71,33 +144,50 @@ nav a {
 }
 
 .mainpage nav a {
-	color: #FFF;
+	color: var(--col-bg);
 	border-bottom-color: rgba(255, 255, 255, 0);
 }
 
-.mainpage nav a.current, .mainpage nav a:hover {
+.mainpage nav a.current,
+.mainpage nav a:hover {
 	border-bottom-color: rgba(255, 255, 255, 255);
 }
 
-nav a.current, nav a:hover {
+nav a.current,
+nav a:hover {
 	border-bottom-color: rgba(51, 51, 51, 255);
 	text-decoration: none;
 }
 
-.content p { text-align: justify; }
-.content p, .content ul, .content ol {
+.content p {
+	text-align: justify;
+}
+
+.content p,
+.content ul,
+.content ol {
 	line-height: 1.6em;
 }
+
 .content ul.article_list {
 	line-height: inherit;
 }
 
-.content a, footer a.social-icon {
+.content a,
+footer a.social-icon {
 	text-decoration: none;
-	color: #16b1c3;
+	color: var(--col-accent);
 }
-.content a:visited, footer a.social-icon:visited { color: #0d7581; }
-.content a:hover, footer a.social-icon:hover { text-decoration: underline; }
+
+.content a:visited,
+footer a.social-icon:visited {
+	color: var(--col-accent-dimmed);
+}
+
+.content a:hover,
+footer a.social-icon:hover {
+	text-decoration: underline;
+}
 
 .content blockquote:before {
 	position: absolute;
@@ -132,13 +222,13 @@ nav a.current, nav a:hover {
 .content pre,
 .content p code {
 	border-radius: 3px;
-	border-bottom: 2px solid #999;
+	border-bottom: 2px solid var(--col-bg-dimmed);
 }
 
 .content img {
 	display: block;
 	padding: 5px;
-	background: #EEE none;
+	background: var(--col-bg-subtle) none;
 	margin: 0 auto;
 	max-width: 95%;
 	height: auto;
@@ -161,11 +251,11 @@ nav a.current, nav a:hover {
 }
 
 .content table thead {
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid var(--col-bg-dimmed);
 }
 
 .content table tfoot {
-	border-top: 1px solid #999;
+	border-top: 1px solid var(--col-bg-dimmed);
 }
 
 .content img.avatar {
@@ -177,22 +267,22 @@ nav a.current, nav a:hover {
 }
 
 .content .caption {
-    display: block;
+	display: block;
 	text-align: center;
 	font-style: italic;
-	color: #666666;
+	color: var(--col-fg-dimmed);
 	margin-top: 0.2em;
 	font-size: 0.8em;
 }
 
 .content pre,
 .content p code {
-	background: #EEE none;
+	background: var(--col-bg-subtle) none;
 	font-family: Melno, Monaco, Consolas, Monospace;
-	color: #333;
+	color: var(--col-fg-subtle);
 }
 
-.content p > code {
+.content p>code {
 	display: inline;
 	padding: 1px 5px;
 }
@@ -218,18 +308,21 @@ nav a.current, nav a:hover {
 	padding-right: 150px;
 }
 
-.postheader h1 a, .postheader h1 a:visited {
+.postheader h1 a,
+.postheader h1 a:visited {
 	text-decoration: none;
-	color: #333;
+	color: var(--col-fg-subtle);
 	display: block;
 }
+
 .postheader h1 a:hover {
 	text-decoration: none;
-	color: #16b1c3;
+	color: var(--col-accent);
 }
+
 .postheader h1 a:hover:before {
 	content: "§";
-	color: #16b1c3;
+	color: var(--col-accent);
 	position: absolute;
 	left: -50px;
 }
@@ -249,7 +342,7 @@ nav a.current, nav a:hover {
 	right: 0;
 	bottom: 0;
 	text-align: right;
-	color: #999;
+	color: var(--col-bg-dimmed);
 	background: transparent none;
 }
 
@@ -259,9 +352,10 @@ footer {
 	overflow: hidden;
 	width: 100%;
 	text-align: center;
-	color: #DDD;
+	color: var(--col-bg-dimmed);
 	font-size: 0.9em;
-	margin: 2em auto;
+	margin: 0 auto;
+	padding: 2em 0;
 }
 
 footer a.social-icon {
