@@ -57,7 +57,7 @@ such as repeated uses of the same path or calls to the same method.
 An simplified definition of a tree might look like the following in
 F#:
 
-```f#
+```fsharp
 type GreenToken =
 	{ Kind: SyntaxKind
 	  Text: string }
@@ -76,7 +76,7 @@ On its own the green tree represents abstract syntactic elements. To
 provide a richer view over the top the red tree is the a layer over
 the top similar to the following:
 
-```f#
+```fsharp
 type SyntaxToken =
 	{ Offset: int
 	  Parent: SyntaxNode option
