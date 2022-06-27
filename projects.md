@@ -8,6 +8,9 @@ title: Projects
 
 I have many projects on the go at [Github](http://github.com/iwillspeak); most of them are just for fun. Some of my older stuff is also on [Bitbucket](http://bitbucket.org/iwillspeak). Here are some of the jewels in the crown:
 
+* [Feersum](https://github.com/iwillspeak/feersum) - Scheme compiler targetting the .NET CLR.
+* [Teasel](https://github.com/iwillspeak/teasel) - HTML parser written in Typescript.
+* [Tyrannoport](https://github.com/iwillspeak/tyrannoport) - .NET `.trx` test report to HTML conversion.
 * [Docket](https://github.com/iwillspeak/docket) - Simple Markdown Documentation Site Generator.
 * [IronRure](http://github.com/iwillspeak/IronRure) - .NET bindings for the Rust `regex` crate.
 * [PollyTick](http://github.com/iwillspeak/pollytick) - Execution statistics observation for [Polly](http://thepollyproject.org/)
