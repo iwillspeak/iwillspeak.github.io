@@ -7,7 +7,7 @@ title: About
 # About {{ site.name }}
 
 <div>
-<p style="float: left; width: 600px;">
+<p style="float: left; max-widt: 600px;">
 {{ site.name }} is the various projects and musings of me, Will Speak. I am a computer science graduate and software developer. I have dabbled in a variety of programming languages. When it comes to user interfaces I’d rather have a command line. I have an interest in
 <a href="{{ site.deviant_url }}">digital paiting</a>, <a href="{{ site.flickr_url }}" alt="My Flickr Site">photography</a>, and a weakness for all things mac.
 </p>
