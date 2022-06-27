@@ -399,19 +399,22 @@ footer a.twitch {
 	background-color: var(--col-bg);
 	border: 1px solid var(--col-fg-dimmed);
 	border-radius: 5px;
+}
+
+#dark-mode-placeholder a {
 	display: flex;
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	padding: 5px;
 }
 
 #dark-mode-placeholder a,
 #dark-mode-placeholder svg {
 	color: var(--col-fg-dimmed);
 	fill: var(--col-fg-dimmed);
-	display: block;
 }
 
 #dark-mode-placeholder:hover {
