@@ -5,7 +5,7 @@ const sunIcon = `<svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox
 const moonIcon = `<svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z"></path></svg>`;
 
 const setIconFromMode = (button, mode) => {
-    if (mode === "auto" || mode === undefined) {
+    if (mode === undefined) {
         mode = prefersDarkMode.matches ? "dark" : "light";
     }
 
@@ -17,7 +17,7 @@ const toggleMode = () => {
     const dataSet = document.documentElement.dataset;
     const currentMode = dataSet.colorMode;
 
-    if (currentMode === "auto" || currentMode === undefined) {
+    if (currentMode === undefined) {
         if (prefersDarkMode.matches) {
             dataSet.colorMode = "light";
         } else {
@@ -25,7 +25,7 @@ const toggleMode = () => {
         }
         localStorage.setItem("stashed-theme", dataSet.colorMode);
     } else {
-        dataSet.colorMode = "auto";
+        delete dataSet.colorMode;
         localStorage.removeItem("stashed-theme");
     }
 

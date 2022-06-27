@@ -79,8 +79,7 @@ const toggleMode = () => {
     const dataSet = document.documentElement.dataset;
     const currentMode = dataSet.colorMode;
 
-    if (currentMode === "auto" ||
-        currentMode === undefined) {
+    if (currentMode === undefined) {
         if (prefersDarkMode.matches) {
             dataSet.colorMode = "light";
         } else {
@@ -89,7 +88,7 @@ const toggleMode = () => {
         localStorage.setItem(
             "stashed-theme", dataSet.colorMode);
     } else {
-        dataSet.colorMode = "auto";
+        delete dataSet.colorMode;
         localStorage.removeItem("stashed-theme");
     }
 
