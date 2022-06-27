@@ -10,7 +10,7 @@
     --col-hl-fg-sutble: var(--col-fg-subtle, #333);
     --col-hl-fg-dimmed: var(--col-fg-dimmed, #666);
     --col-hl-bg: var(--col-bg, #FFF);
-    --col-hl-bg-subtle: var(--col-bg-subtle, #F9F9F9);
+    --col-hl-bg-subtle: var(--col-bg-subtle, #FBFBFB);
     --col-hl-bg-dimmed: var(--col-bg-dimmed, #999);
 }
 

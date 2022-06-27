@@ -139,5 +139,3 @@ html[data-color-mode="light"] {
 That's it! With the colour variables switched either based on the user's media preference, or via a `data-color-mode` property at the root node dark modification is complete. The last remaining step for this site was to update the styles for code blocks to ensure that colours were legible in both light and dark environments.
 
 I am by no means a frontend expert but I enjoyed the process of tweaking CSS and refactoring it as if it were backend code. I'm happy with the resulting style sheet. I hope my travels prove useful to others.
-
----
