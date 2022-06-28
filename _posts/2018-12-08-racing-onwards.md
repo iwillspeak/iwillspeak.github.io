@@ -18,7 +18,7 @@ The good news is that these should all be available on the `stable` toolchain ri
 
 Configuration wise I prefer to manage things with [`use-package`](https://jwiegley.github.io/use-package/). For a simple setup you should just need [`rust-mode`](https://github.com/rust-lang/rust-mode) and [`lsp-mode`](https://github.com/emacs-lsp/lsp-mode):  
   
-```el
+```elisp
 (use-package rust-mode
   :ensure t
   :mode "\\.rs"
@@ -33,7 +33,7 @@ Configuration wise I prefer to manage things with [`use-package`](https://jwiegl
 
 Personally I prefer to use [Company](http://company-mode.github.io/) for completions. To switch to that all you ned to do is require the `company-lsp` mode.
 
-```el
+```elisp
 (use-package company-lsp
   :ensure t
   :after company)
