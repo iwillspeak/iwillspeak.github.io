@@ -22,16 +22,16 @@ When parsing an expression we first ask the current token to parse its _null den
 
 One of the key ideas here is that, as in [Douglas Crockford’s implementation][crockford], each token is responsible for the logic required to parse itself and any following tokens which make up the expression that it is part of. Let’s start with a simple grammar with two operators at different precedence levels and numeric literals:
 
-{%highlight rust%}
+```rust
 #[derive(Clone)]
 pub enum Token {
     Add, Mull, Num(i64)
 }
-{%endhighlight%}
+```
 
 The first step is to define the left binding power for each of these tokens. The higher the precedence the tighter the operator binds:
 
-{%highlight rust%}
+```rust
 impl Token {
     fn lbp(&self) -> u32 {
         match *self {
@@ -41,22 +41,22 @@ impl Token {
         }
     }
 }
-{%endhighlight%}
+```
 
 The next step is to implement the `nud` method. We only have one value type in this grammar so it’s pretty simple.
 
-{%highlight rust%}
-    fn nud(&self) -> Result<Expression,String> {
-        match *self {
-            Token::Num(i) => Ok(Expression::Num(i)),
-            _ => Err("expecting literal".to_string())
-	    }
+```rust
+fn nud(&self) -> Result<Expression,String> {
+    match *self {
+        Token::Num(i) => Ok(Expression::Num(i)),
+        _ => Err("expecting literal".to_string())
     }
-{%endhighlight%}
+}
+```
 
 Next up the `led` method. This is responsible for parsing our binary operators.
 
-{%highlight rust%}
+```rust
     fn led(&self, parser: &mut Parser, lhs: Expression) -> Result<Expression,String> {
         match *self {
             Token::Add | Token::Mull => {
@@ -67,11 +67,11 @@ Next up the `led` method. This is responsible for parsing our binary operators.
             _ => Err("expecing operator".to_string())
         }
     }
-{%endhighlight%}
+```
 
 Now all that’s left is to create our `Parser` and fit all of these parts together. For simplicity our parser will take an iterator of pre-made tokens. We’ll define a few helper functions  as well to aid calling the `Token`’s `nud`, `led`, and `lbp` methods.
 
-{%highlight rust%}
+```rust
 pub struct Parser<'a> {
     tokens: Peekable<Iter<'a, Token>>
 }
@@ -97,11 +97,11 @@ impl<'a> Parser<'a> {
             t.led(self, expr)
         })
     }
-{%endhighlight%}
+```
 
 Next up is the main `expression` function. This isn’t too far from the pseudo-code we started with:
 
-{%highlight rust%}
+```rust
 fn expression(&mut self, rbp: u32) -> Result<Expression,String> {
     let mut left = try!(self.parse_nud());
     while self.next_binds_tighter_than(rbp) {
@@ -109,7 +109,7 @@ fn expression(&mut self, rbp: u32) -> Result<Expression,String> {
     }
     Ok(left)
 }
-{%endhighlight%}
+```
 
 And that’s it. We’re all done. For a full code listing check out [the Gist][gist].
 

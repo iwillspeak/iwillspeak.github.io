@@ -12,7 +12,7 @@ So far building and testing from emacs using `dotnet build` and `dotnet test` ha
 
 Setting up a build on Appveyor for this library was pretty simple too. I've previously [used Appveyor to build Rust on Windows](https://github.com/rust-onig/rust-onig/blob/master/appveyor.yml). The whole .NET Core restore, build, test, package workflow fits quite nicely into Appveyor's four stages of workflow. After [a bit of fiddling](https://github.com/iwillspeak/PollyTick/pull/1) I managed to get a build up and running. The resulting config ended up being pretty simple:
 
-{% highlight yaml %}
+```yaml
 image: Visual Studio 2015
 install:
   - ps: dotnet --version
@@ -21,7 +21,7 @@ build_script:
   - ps: dotnet build src/*/project.json
 test_script:
   - ps: ForEach ($folder in (Get-ChildItem -Path test -Directory)) { dotnet test $folder.FullName }
-{% endhighlight %}
+```
 
 The fiddly bit was being able to run all test projects. The `dotnet test` command doesn't support the globs that `dotnet build` does, so a bit of PowerShell is required to get the job done.  I did [experiment with caching NuGet packages](https://github.com/iwillspeak/PollyTick/commit/63646855a70b5ae42ada37531c6c79174bc7afae) however that just seemed to make the build slower. Overall the process was pretty painless though. The Appveyor builds themselves seem super responsive and it builds this little project super quickly.
 

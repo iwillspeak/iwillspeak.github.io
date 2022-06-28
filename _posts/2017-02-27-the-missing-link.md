@@ -10,16 +10,16 @@ The last crevasse that LLVM plonks us down next to is **linking**. Taking a coll
 
 I'm going to dive straight in and assume there's an `LLVMModuleRef` compiled and ready to go. The first thing we need to do is write the module out somewhere to disk where `clang` can read it from. In Rust I'm reaching for the [`tempdir` crate](https://crates.io/crates/tempdir) to make sure things get cleaned up afterwards, but really the exact place these intermediate files get written doesn't matter.
 
-{% highlight rust %}
+```rust
 // Create a tempdir to write the LLVM IR to
 let tmp_dir = TempDir::new("output")
     .expect("create temp dir");
 let temp_path = tmp_dir.path().join("temp.ll");
-{% endhighlight %}
+```
 
 Writing out an object file requires using the LLVM TargetMachine infrastructure. That sounds a bit fiddly though so it's easier to just write out LLVM IR for now with `LLVMPrintModuleToFile`.
 
-{% highlight rust %}
+```rust
 let path = CString::new(temp_path.to_str().unwrap()).unwrap();
 unsafe {
     let mut message = ptr::null_mut();
@@ -34,18 +34,18 @@ unsafe {
         Err(err_str)
     }
 }
-{% endhighlight %}
+```
 
 With that in place all we need to produce a fully functioning executable is to shell out to Clang! In rust this is super easy with the `Command` builder. We just need to tell Clang where our LLVM IR is, and where to put the result when it's done.
 
-{% highlight rust %}
+```rust
 // Shell out to Clang to link the final assembly
 let status = try!(Command::new("clang")
     .arg(temp_path)
     .arg("-o")
     .arg("a.out") // It's traditional :-p
     .status());
-{% endhighlight %}
+```
 
 And, if all goes well, Clang should do our dirty work and leave us with an executable `a.out`. All linked and ready to go!
 

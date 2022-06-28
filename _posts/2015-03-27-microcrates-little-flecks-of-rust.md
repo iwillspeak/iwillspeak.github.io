@@ -12,7 +12,7 @@ I was in the process of messing around with some Rust code. I had created a new 
 
 By convention a Rust crate has a few different directories, `src/` for all of the source files, `test/` for integration tests and so on; at the top level is the `Cargo.toml` file containing the package metadata. We can't use these in a Gist. We need to just stick our source files right next to the `Cargo.toml`. It turns out that configuring Cargo to understand our wacky new folder structure is actually quite simple. We just need to se the path to our source file in the `Cargo.toml`
 
-{% highlight toml %}
+```toml
 [package]
  
 name = "..."
@@ -22,7 +22,7 @@ authors = ["..."]
 [[bin]]
     name = "example"
     path = "main.rs"
-{% endhighlight %}
+```
 
 If you're creating a library rather than an executable you'll ned to use the `[lib]` section instead of the `[[bin]]` array. There's more information about what you can configure for each target [in the cargo docs][cargo_target]. You can see the results in action in [a simple hand-written lexer I wrote](https://gist.github.com/iwillspeak/a8a8c0f03524d8ce6d19).
 

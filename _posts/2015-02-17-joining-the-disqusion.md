@@ -13,8 +13,8 @@ There are some subtleties to getting this all working properly with Jekyll thoug
 Luckily with Jekyll this was quite simple. Each post already has a unique ID `{{ post.id }}` and you're permalink URL can be found by adding the URL of the site to the `{{ post.url }}`. Putting this all together you get something like this:
 {% endraw %}
 
-{% highlight html %}
 {% raw %}
+```html
   <!-- DISQUS -->
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -31,7 +31,7 @@ Luckily with Jekyll this was quite simple. Each post already has a unique ID `{{
     })();
   </script>
   <div id="disqus_thread"></div>
+```
 {% endraw %}
-{% endhighlight %}
 
 Feel free to use this to embed Disqus into your site.

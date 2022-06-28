@@ -8,7 +8,7 @@ In WPF the `PasswordBox` control does not expose the password it contains throug
 
 Recently I've been experimenting with [ReactiveUI](http://reactiveui.net/). ReactiveUI brings together the elegance and power of Reactive Extensions (RX) and MVVM to provide a clean, simple, and reactive way to build interfaces. One of the key tenets of ReactiveUI is that [it's not actually bad to put logic in code-behind](https://docs.reactiveui.net/en/user-guide/view-models/#common-mistakes-and-misconceptions). With that in mind the power of Rx provides an elegant way to bind the contents of a `PasswordBox` to the view model.
 
-{% highlight c# %}
+```csharp
 Observable.FromEvent<RoutedEventArgs,SecureString>(a =>
 {
      RoutedEventHandler proxy = (_, args) =>
@@ -20,7 +20,7 @@ Observable.FromEvent<RoutedEventArgs,SecureString>(a =>
 h => Password.PasswordChanged += h,
 h => Password.PasswordChanged -= h)
     .BindTo(this, x => x.ViewModel.Password);
-{% endhighlight %}
+```
 
 I think this is a pretty elegant solution to the whole problem. ReactiveUI calls these [hack bindings](https://docs.reactiveui.net/en/user-guide/binding/#hack-bindings-and-bindto), and they are, but sometimes as a developer you have to break out a little pragmatism.
 

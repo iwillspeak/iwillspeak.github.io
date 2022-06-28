@@ -14,7 +14,7 @@ We will attempt to recognise a simple set of tokens consisting of variables, num
 
 To recognise it we define the following Ragel machine. It uses the shorthand syntax for defining a tokeniser machine. This allows us to define a set of regular expressions actions that will be run when the expression is matched similar to the functionality of lex.
 
-{% highlight ragel-cpp %}
+```ragel-cpp
 %%{
   machine ExampleLexer;
 
@@ -38,13 +38,13 @@ To recognise it we define the following Ragel machine. It uses the shorthand syn
     space+;
   *|;
 }%%
-{% endhighlight %}
+```
 
 Notice that we explicitly have to match whitespace and ignore it.  We will define the macro `CAPTURE_TOKEN` to expand to the C++ code we require to return a token of that type.
 
 We will represent tokens as a simple C++ struct:
 
-{% highlight cpp %}
+```cpp
 struct Token
 {
     enum TokenType {
@@ -58,7 +58,7 @@ struct Token
     TokenType type;
     std::string value;
 };
-{% endhighlight %}
+```
 
 We now just need to define a simple C++ class to encapsulate the lexer's state. We define the member variables `p`, `pe` and `eof`  which Ragel needs to keep track of the state of the buffer and initialise them in the constructor. If the data was being read in chunks from a buffered source you would need to keep on updating these pointers until you reached the end of the input storem.
 
@@ -66,7 +66,7 @@ Since we are using a tokeniser machine we need to set up the `ts` and `te` varia
 
 The final set of Ragel variables (`act`, `cs`, `top`, `stack`) define the internal workings of the state machine.
 
-{% highlight cpp %}
+```cpp
 class Lexer
 {
 public:
@@ -114,15 +114,15 @@ private:
 
     std::string buffer;
 };
-{% endhighlight %}
+```
 
 The one last thing we need to define is the macro which captures the token. This macro basically writes directly into the `token` variable defined as a local in the `next()` method.
 
-{% highlight cpp %}
+```cpp
 #define CAPTURE_TOKEN(t) \
   token->value = std::string(ts, te-ts); \
   token->type = Token::t
-{% endhighlight %}
+```
 
 And there you go. All done. We can now pass a simple buffer to our lexer and keep on calling `next()` until we run out of tokens. This lecture will return the tokens one at a time as it reads them. You can have Ragel tokenise the whole input if you want by removing the `fbreak` calls from the actions and looping until you receive either `None` or `End`.
 

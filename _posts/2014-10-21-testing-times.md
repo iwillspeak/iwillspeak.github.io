@@ -8,14 +8,14 @@ There is a lot of code in the world. A lot of it is C++. Roughly 85% of that is 
 
 Getting started with the framework is dead simple. Download the source, `./configure`, `make`, and you're done! It's just as easy to integrate it into your project too. *GTest* has auto-discovery of unit tests so all you need to do to create your first test is compile and link in a file with a test definition. Something like this should suffice:
 
-{% highlight c++ %}
+```cpp
 #include <gtest/gtest.h>
 
 TEST(MyAwesomeTest,ThatPasses) {
     auto test_is_awesome = true;
     ASSERT_TRUE(test_is_awesome);
 } 
-{% endhighlight %}
+```
 
 With that compiled and linked I'll reveal the next neat feature *GTest* has up it's sleeve. If you're writing tests for a command line app you can get guest to run unit tests with a call to `RUN_ALL_TESTS()`. But what if you're not writing a standalone tool but a dynamic library? Well *GTest* has a minimalist test harness available as a library alongside the main `libgtest` too. Just link `-lgtest_main` on the command line along with your dynamic library and you should have yourself a working unit test  runner.
 

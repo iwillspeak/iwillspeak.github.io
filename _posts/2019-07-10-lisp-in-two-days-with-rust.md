@@ -8,7 +8,7 @@ As a sidetrack from the development of [my programming language][ullage] I've sp
 
 The language I'll be developing here is heavily inspired by the [lispy Scheme derivative][lispy]. Some elements of behaviour are cribbed directly from [Emacs LISP][elisp] as it was the LISP implementation I had to hand. By the end we should have a language capable of evaluating expressions like the following:
 
-```lisp
+```scheme
 (begin
 	(define foo 1007)
 	(define bar 330)

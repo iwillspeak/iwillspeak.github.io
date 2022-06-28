@@ -70,38 +70,38 @@ Now all that's left to do is to write a program that implements the state machin
 
 The first is the `Tok` structure. This represents each token we generate. A nice feature of Rust is that we can store the value directly in the enum along with the identifier of the token. This is really just syntactic sugar for a tagged union in c-land. There is one major advantage though. You can't read the wrong type of data out due to the type safety enforced by the Rust language.
 
-{% highlight Rust %}
+```rust
 #[derive(Debug,PartialEq)]
 pub enum Tok {
     Var(String),
     Num(i32),
     Plus
 }
-{% endhighlight %}
+```
 
 Next up is the state enumeration. It's a pretty simple one. One thing to note is that we make sure it implements `PartialEq` so we can compare values of it later on.
 
-{% highlight Rust %}
+```rust
 #[derive(PartialEq)]
 enum State {
     S, A, B, C, D
 }
-{% endhighlight %}
+```
 
 The final structure is the tokeniser itself. This stores the buffer of characters to be tokenised, represented as a `String`, and the start of the token currently being tokenised. Once we finish consuming a token we advance this index so that the next token in the stream can be recognised.
 
-{% highlight Rust %}
+```rust
 pub struct Tokeniser {
     ts: usize,
     chars: String
 }
-{% endhighlight %}
+```
 
 The final state machine then loops through the characters in the buffer, starting from where it left off. If the character refers to a valid transition in the state machine it moves to that state and keeps on looking for more characters. Once we can no longer move to another state we return a token based on the last accepting state that we entered.
 
 Seen as in this state machine we can't move to any non-accepting states after entering an accepting state we make the simplifying assumption that the last accepting state was just the last state. If the last state wasn't an accepting state then we return `None`. If the last state was an accepting state we return a `Some(Tok)` with the right data read from the slice of the buffer which we just recognised.
 
-{% highlight Rust %}
+```rust
 fn next_match(&mut self) -> Option<Tok> {
 
     loop {
@@ -171,6 +171,6 @@ fn next_match(&mut self) -> Option<Tok> {
         };
     }
 }
-{% endhighlight %}
+```
 
 For more code take a look at the [full Microcrate](https://gist.github.com/iwillspeak/a8a8c0f03524d8ce6d19).

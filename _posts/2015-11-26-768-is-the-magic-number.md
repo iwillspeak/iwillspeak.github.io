@@ -9,7 +9,7 @@ tempted to just set the `Body` property on the message directly. This
 doesn't quite work however as the `Body` property is serialised with
 whatever formatter you're using when the message is sent.
 
-{% highlight C# %}
+```csharp
 var mq = new MessageQueue(@".\Private%\test");
 var messageBody = File.ReadAllBytes("...");
 
@@ -17,7 +17,7 @@ var message = new Message();
 message.Body = messageBody;
 
 mq.Send(message); // double-encodes the body :-(
-{% endhighlight %}
+```
 
 There is a way around this serialisation though. MSDN has this to say:
 
@@ -34,11 +34,11 @@ is in. This is where the magic number `768` makes it's show. By
 setting the `BodyType` to this magic number tools will know the body
 is serlialised with a `BinaryMessageFormatter`:
 
-{% highlight C# %}
+```csharp
 var message = new Message();
 message.BodyStream = new MemoryStream(messageBody);
 message.BodyType = 768; // Binary formatted .NET object
-{% endhighlight %}
+```
 
 Now you can send the message and recipients won't know the differnece
 from the origional backup.

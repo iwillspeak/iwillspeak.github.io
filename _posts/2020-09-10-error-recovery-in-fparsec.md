@@ -206,5 +206,4 @@ Much better. We get _some_ kind of parse tree at least, and the diagnostics poin
 The full source code for these parsers is available [on GitHub](https://github.com/iwillspeak/flop/tree/c5ac549363bf93897fa572caab9eff37037ee7e8).
 
 
-
  [fparsec]: http://www.quanttec.com/fparsec

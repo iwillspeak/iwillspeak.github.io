@@ -10,7 +10,7 @@ LLVM itself is composed of many modular libraries. This is great for library con
 
 Some of the target initialisation routines can be called more than once, but not all are guaranteed to be reentrant or thread safe. To solve this we can use Rust’s [Once][rust_once] to ensure that we only call the initialisation routine once:
 
-{% highlight rust %}
+```rust
 fn ensure_initialised() {
     use std::sync::{Once, ONCE_INIT};
 
@@ -29,7 +29,7 @@ fn ensure_initialised() {
         }
     });
 }
-{% endhighlight %}
+```
 
 Here we are linking in the MC JIT so we can create and execute machine code for the current target, and initialising the current and it’s ASM printer. This should be enough to be able to start working with JIT compilation using MCJIT. More on that later.
 
