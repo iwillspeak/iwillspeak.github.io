@@ -73,7 +73,7 @@ The key parts here are the `needs: build` to force it to wait for our build step
 With all that in place we now have [a working Actions workflow][workflow] building a simple site and deploying to Pages. Check out the [full code for this post][repo] to see it in action, or [gaze upon the output in wonder][output]. 
 
  [announcement]: https://github.blog/changelog/2021-12-16-github-pages-using-github-actions-for-builds-and-deployments-for-public-repositories/
- [troubleshooting]: https://github.com/actions/deploy-pages/issues/20
+ [troubleshooting]: https://github.com/actions/deploy-pages/issues/20#issuecomment-1068207408
  [deploy-action]: https://github.com/actions/deploy-pages
  [upload-pages-action]: https://github.com/actions/upload-pages-artifact
  [workflow]: https://github.com/iwillspeak/on-the-same-page/blob/main/.github/workflows/pages.yml
