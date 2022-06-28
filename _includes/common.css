@@ -19,6 +19,9 @@
 
 	/* FONTS */
 	--fnt-base-size: 16px;
+	--fnt-family-title: Merriweather, Kefa, Georgia, Serif;
+	--fnt-family-body: Merriweather, Georgia, "Bookman Old Style", Times, Serif;
+	--fnt-family-mono: Melno, Monaco, Consolas, Monospace;
 }
 
 /* Apply a dark color scheme */
@@ -71,7 +74,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: Merriweather, Kefa, Georgia, Serif;
+	font-family: var(--fnt-family-title);
 	font-weight: bold;
 	margin: 0.5em 0 0.3em;
 }
@@ -130,7 +133,7 @@ header a {
 }
 
 body {
-	font: var(--fnt-base-size) Georgia, "Bookman Old Style", Times, Serif;
+	font: var(--fnt-base-size) var(--fnt-family-body);
 	background: var(--col-bg) none;
 	color: var(--col-fg-subtle);
 }
@@ -151,7 +154,7 @@ nav {
 nav a {
 	display: inline;
 	font-weight: bold;
-	font: 1.7em Kefa, "Bookman Old Style", Georgia, Times, Serif;
+	font: 1.7em var(--fnt-family-title);
 	padding: 2px;
 	margin: 5px 15px;
 	color: var(--col-fg-subtle);
@@ -296,7 +299,7 @@ footer a.social-icon:hover {
 .content pre,
 .content p code {
 	background: var(--col-bg-subtle) none;
-	font-family: Melno, Monaco, Consolas, Monospace;
+	font-family: var(--fnt-family-mono);
 	color: var(--col-fg-subtle);
 }
 
