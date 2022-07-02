@@ -25,9 +25,15 @@
 
 	/* FONTS */
 	--fnt-base-size: 16px;
+	--fnt-header-size: 3.2em;
+	--fnt-nav-size: 1.5em;
 	--fnt-family-title: Merriweather, Kefa, Georgia, Serif;
 	--fnt-family-body: Merriweather, Georgia, "Bookman Old Style", Times, Serif;
 	--fnt-family-mono: Melno, Monaco, Consolas, Monospace;
+
+	/* Margins for headings */
+	--mgn-header-top: 100px;
+	--mgn-heroheader-top: var(--mgn-header-top);
 }
 
 /* Apply a dark color scheme */
@@ -70,6 +76,9 @@ html[data-color-mode="light"] {
 @media screen and (min-width: 500px) {
 	:root {
 		--fnt-base-size: 18px;
+		--fnt-header-size: 4.3em;
+		--fnt-nav-size: 1.7em;
+		--mgn-heroheader-top: 350px;
 	}
 }
 
@@ -128,9 +137,9 @@ header {
 
 header h1 {
 	font-weight: bold;
-	font-size: 4.3em;
+	font-size: var(--fnt-header-size);
 	text-align: center;
-	margin: 100px auto 10px;
+	margin: var(--mgn-header-top) auto 10px;
 	color: var(--col-fg);
 }
 
@@ -140,7 +149,7 @@ header a {
 
 .mainpage header h1 {
 	color: var(--col-bg);
-	margin: 350px auto 40px;
+	margin: var(--mgn-heroheader-top) auto 40px;
 	text-shadow: var(--col-fg-subtle) 0 2px;
 }
 
@@ -166,9 +175,9 @@ nav {
 nav a {
 	display: inline;
 	font-weight: bold;
-	font: 1.7em var(--fnt-family-title);
+	font: var(--fnt-nav-size) var(--fnt-family-title);
 	padding: 2px;
-	margin: 5px 15px;
+	margin: 5px;
 	color: var(--col-fg-subtle);
 	border-bottom: 2px solid var(--col-fg-subtle-transparent);
 	text-decoration: none;
