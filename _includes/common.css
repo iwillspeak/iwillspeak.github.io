@@ -124,14 +124,19 @@ h6 {
 	font-size: 1.6em;
 }
 
-header {
+header.page-header section.title,
+header.post-header section.title,
+header.mainpage-header section.title {
+
 	display: block;
 	overflow: hidden;
 	max-width: 900px;
 	margin: 0 auto;
 }
 
-#mainpage_header {
+.mainpage header.mainpage-header {
+	background: var(--col-fg-subtle) center no-repeat url('/img/home_background_003.jpg');
+	background-size: cover;
 	margin-bottom: 2.2em;
 }
 
@@ -147,7 +152,7 @@ header a {
 	text-decoration: none;
 }
 
-.mainpage header h1 {
+.mainpage header.mainpage-header h1 {
 	color: var(--col-bg);
 	margin: var(--mgn-heroheader-top) auto 40px;
 	text-shadow: var(--col-fg-subtle) 0 2px;
@@ -159,7 +164,7 @@ body {
 	color: var(--col-fg-subtle);
 }
 
-section#main {
+main {
 	display: block;
 	max-width: 800px;
 	margin: 0 auto;
@@ -185,7 +190,7 @@ nav a {
 	transition: border-color 0.5s;
 }
 
-.mainpage nav a {
+header.mainpage-header nav a {
 	color: var(--col-bg);
 	border-bottom-color: var(--col-bg-transparent);
 }
@@ -196,8 +201,8 @@ nav a:hover {
 	text-decoration: none;
 }
 
-.mainpage nav a.current,
-.mainpage nav a:hover {
+header.mainpage-header nav a.current,
+header.mainpage-header nav a:hover {
 	border-bottom-color: var(--col-bg);
 }
 
@@ -304,8 +309,10 @@ footer a.social-icon:hover {
 	float: right;
 	width: 160px;
 	height: auto;
-	margin-top: 1.5em;
+	margin-top: 15px;
+	margin-left: 15px;
 	border-radius: 90px;
+	shape-outside: circle();
 }
 
 .content .caption {

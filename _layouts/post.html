@@ -2,12 +2,15 @@
 <html>
 {% include html_head.html %}
 <body class="post">
-	{% include header.html %}
-	
-	<section id="main">
+
+	<header clas="post-header">
+		{% include header.html %}
 		{% include navigation.html %}
+	</header>
+
+	<main>
 		{% include post_content.html %}
-	</section>
+	</main>
 	
 	{% include footer.html %}
 </body>
