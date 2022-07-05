@@ -135,7 +135,7 @@ header.mainpage-header section.title {
 }
 
 .mainpage header.mainpage-header {
-	background: var(--col-fg-subtle) center no-repeat url('/img/home_background_003.jpg');
+	background: var(--col-dark-subtle) center no-repeat url('/img/home_background_003.jpg');
 	background-size: cover;
 	margin-bottom: 2.2em;
 }
@@ -153,12 +153,13 @@ header a {
 }
 
 .mainpage header.mainpage-header h1 {
-	color: var(--col-bg);
+	color: var(--col-light);
 	margin: var(--mgn-heroheader-top) auto 40px;
-	text-shadow: var(--col-fg-subtle) 0 2px;
+	text-shadow: var(--col-dark-subtle) 0 2px;
 }
 
 body, html {
+	accent-color: var(--col-accent);
 	font: var(--fnt-base-size) var(--fnt-family-body);
 	background: var(--col-bg) none;
 	color: var(--col-fg-subtle);
@@ -191,8 +192,8 @@ nav a {
 }
 
 header.mainpage-header nav a {
-	color: var(--col-bg);
-	border-bottom-color: var(--col-bg-transparent);
+	color: var(--col-light);
+	border-bottom-color: var(--col-light-transparent);
 }
 
 nav a.current,
@@ -203,11 +204,7 @@ nav a:hover {
 
 header.mainpage-header nav a.current,
 header.mainpage-header nav a:hover {
-	border-bottom-color: var(--col-bg);
-}
-
-.content p {
-	text-align: justify;
+	border-bottom-color: var(--col-light);
 }
 
 .content p,
@@ -218,6 +215,10 @@ header.mainpage-header nav a:hover {
 
 .content ul.article_list {
 	line-height: inherit;
+}
+
+.content li::marker {
+	color: var(--col-accent-dimmed);
 }
 
 .content a,
