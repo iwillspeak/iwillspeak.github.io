@@ -350,12 +350,30 @@ footer a.social-icon:hover {
 }
 
 .postheader {
-	position: relative;
-	display: block;
+	display: flex;
+	flex-direction: column;
 }
 
 .postheader h1 {
-	padding-right: 150px;
+	flex-grow: 1;
+}
+
+.postheader .info {
+	color: var(--col-bg-dimmed);
+	flex-shrink: 0;
+	background: transparent none;
+}
+
+@media screen and (min-width: 500px) {
+	.postheader {
+		flex-direction: row;
+		align-items: last baseline;
+	}
+
+	.postheader .info {
+		padding-left: 5px;
+		text-align: right;
+	}
 }
 
 .postheader h1 a,
@@ -383,19 +401,6 @@ footer a.social-icon:hover {
 	width: 100%;
 	font-size: 0.8em;
 }
-
-.postheader .info {
-	padding: 0 0 3px;
-	margin: 0;
-	position: absolute;
-	width: 140px;
-	right: 0;
-	bottom: 0;
-	text-align: right;
-	color: var(--col-bg-dimmed);
-	background: transparent none;
-}
-
 
 footer {
 	display: block;

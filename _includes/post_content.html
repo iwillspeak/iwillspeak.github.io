@@ -5,10 +5,10 @@
 {% endif %}
 
 <article class="content">
-  <div class="postheader">
-	<p class="info">{{ post.date | date_to_string }}</p>
-	<h1 id="title">{{ post.title }}</h1>
-  </div>
+  <hgroup class="postheader">
+    <h1 id="title">{{ post.title }}</h1>
+		<time class="info" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_string }}</time>
+  </hgroup>
   {{ content }}
 </article>
 <section class="comments">
