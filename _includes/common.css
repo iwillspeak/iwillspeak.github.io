@@ -374,6 +374,10 @@ footer a.social-icon:hover {
 		padding-left: 5px;
 		text-align: right;
 	}
+	
+	.postheader h1 {
+		margin-bottom: 0;
+	}
 }
 
 .postheader h1 a,
