@@ -7,7 +7,7 @@
 <article class="content">
   <hgroup class="postheader">
     <h1 id="title">{{ post.title }}</h1>
-		<time class="info" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_string }}</time>
+		<p class="info"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_string }}</time></p>
   </hgroup>
   {{ content }}
 </article>
