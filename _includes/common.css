@@ -361,6 +361,8 @@ footer a.social-icon:hover {
 .postheader .info {
 	color: var(--col-bg-dimmed);
 	flex-shrink: 0;
+	margin: 0;
+	padding: 0;
 	background: transparent none;
 }
 
