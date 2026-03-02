@@ -1,5 +1,5 @@
 name: Plingdollar
-exclude: [etc]
+exclude: [etc, vendor]
 twitter_url: https://twitter.com/willspeak/
 twitter_url: https://twitter.com/willspeak/
 flickr_url: https://flickr.com/photos/alphaindigo
