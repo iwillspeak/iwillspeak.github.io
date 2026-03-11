@@ -103,7 +103,7 @@ type Cst =
   | Form of Cst list
 ```
 
-This encodes the raw syntactic structure of our language. This will not be sufficient to model our understanding of the syntax tree outlined above however. To solve this we introduce a second parallel `stx` tree. Once our parser has produced the `Cst` we use the `illuminate` function to walk the concrete syntax and produce a new tree where each raw symbol has been given its initial binding to an identifier. First our tree structure.
+This encodes the raw syntactic structure of our language. This will not be sufficient to model our understanding of the syntax tree outlined above however. To solve this we introduce a second parallel `stx` tree. Once our parser has produced the `Cst` we use the `illum` function to walk the concrete syntax and produce a new tree where each raw symbol has been given its initial binding to an identifier. First our tree structure.
 
 ```fsharp
 type Ident = { Name: string; Stamp: int }
@@ -117,10 +117,10 @@ type Stx =
 and StxEnv = Map<string, StxBinding>
 
 and StxBinding =
-	| Lam
-	| Var of Ident
-	| Macro of Transformer
-	
+  | Lam
+  | Var of Ident
+  | Macro of Transformer
+
 and Transformer = Stx -> StxEnv -> Stx
 ```
 
@@ -133,23 +133,23 @@ let public illum = function
   | Cst.Literal l -> Stx.Literal l
   | Cst.Form f ->
     f
-	|> List.map (illum)
-	|> Stx.Form
+    |> List.map (illum)
+    |> Stx.Form
 ```
 
 We then define a pair of functions to help us deal with syntax environments. The first takes a piece of syntax and wraps it into a `Stx.Closure`. The second resolves a given name _in the `StxEnv`_ and returns the `StxBinding`. If no entry exists in our syntax environment for a name we return the 'default' meaning for that name. For our special form `lambda` this is our token `Lam` binding, for all other names we represent them as "free variables".
 
 ```fsharp
 let close (stx: Stx) (defEnv: StxEnv) : Stx =
-    StxClosure(stx, defEnv)
+  StxClosure(stx, defEnv)
 
 let resolve (id: Ident) (stxEnv: StxEnv) : StxBinding =
-    match stxEnv.TryFind id.Name with
-    | Some binding -> binding
-    | None ->
-        match id.Name with
-        | "lam" -> Lam
-        | _ -> Var id
+  match stxEnv.TryFind id.Name with
+  | Some binding -> binding
+  | None ->
+    match id.Name with
+    | "lam" -> Lam
+    | _ -> Var id
 ```
 
 With these two functions in place we can begin to implement our `expand` method. It takes a piece of syntax and a syntax environment and produces an optional replacement piece of syntax and a new environment. The first output is `option` as some syntax items, such as `def-syntax` will have no representation in the final tree. In this case we would return `None` and elide it from the final expanded form of the program. The second output represents the new, potentially expanded, environment in which further syntax should be expanded. Using these two items we can then perform a `mapFold` over a sequence of `Stx` items in order to expand a program.
@@ -162,38 +162,40 @@ For the first few cases our syntax expansion is relatively trivial. Empty forms 
 
 
 ```fsharp
-   match stx with
-   | Stx.Literal _
-   | Stx.Form [] -> (Some stx, stxEnv)
+  match stx with
+  | Stx.Literal _
+  | Stx.Form [] -> (Some stx, stxEnv)
 ```
 
 For `identifier`s we need to resolve them to their binding in the syntax environment. If they are not bound to a variable this is an error. References to syntax items should only be at the head of a form in order to apply them.
 
 ```fsharp
-   | Stx.Ident id ->
-     match (resolve id stxEnv) with
-	 | Var id -> (Some Stx.Ident(id), stxEnv)
-	 | _ -> failwith "Unexpected syntax item in value position"
+  | Stx.Ident id ->
+    match (resolve id stxEnv) with
+    | Var id -> (Some Stx.Ident(id), stxEnv)
+    | _ -> failwith "Unexpected syntax item in value position"
 ```
 
 The interesting cases arise when we encounter a non-empty form. The head of the form determines what kind of expansion needs to take place. If the head is an identifier we resolve it in the syntax environment, just as before, and then dispatch on the result:
 
 ```fsharp
-    | StxForm (head :: args, f) ->
-        match head with
-        | StxIdent(id, sym) ->
-            let resolved = resolve id stxEnv
-            match resolved with
-            | Macro transformer ->
-                (Some (transformer stx stxEnv), stxEnv)
-            | Lam -> (Some (expandLam head args f stxEnv), stxEnv)
-            | DefSyn -> expandDefSyn args stxEnv
-            | Var _ ->
-                let expanded = StxForm(List.map (expandOne stxEnv) (head :: args), f)
-                (Some expanded, stxEnv)
-        | _ ->
-            let expanded = StxForm(List.map (expandOne stxEnv) (head :: args), f)
-            (Some expanded, stxEnv)
+  | StxForm (head :: args, f) ->
+    match head with
+    | StxIdent(id, sym) ->
+      let resolved = resolve id stxEnv
+      match resolved with
+      | Macro transformer ->
+        (Some (transformer stx stxEnv), stxEnv)
+      | Lam -> (Some (expandLam head args f stxEnv), stxEnv)
+      | DefSyn -> expandDefSyn args stxEnv
+      | Var _ ->
+        let expanded =
+          StxForm(List.map (expandOne stxEnv) (head :: args), f)
+        (Some expanded, stxEnv)
+    | _ ->
+      let expanded =
+        StxForm(List.map (expandOne stxEnv) (head :: args), f)
+      (Some expanded, stxEnv)
 ```
 
 There are four cases for a resolved head identifier. If it's a `Macro` we invoke the transformer directly — we'll see how transformers work shortly. If it's the special form `Lam` we delegate to `expandLam`. If it's a `DefSyn` we delegate to `expandDefSyn`, which returns `None` and an updated environment rather than a piece of expanded syntax. For anything else — an ordinary variable reference in head position, or a non-identifier head — we simply recurse into the sub-forms.
@@ -202,9 +204,9 @@ The `expandOne` helper is a thin wrapper that enforces that we only call `expand
 
 ```fsharp
 and private expandOne (stxEnv: StxEnv) (stx: Stx) : Stx =
-    match expand stx stxEnv with
-    | Some result, _ -> result
-    | None, _ -> failwith "def-syn not valid in expression position"
+  match expand stx stxEnv with
+  | Some result, _ -> result
+  | None, _ -> failwith "def-syn not valid in expression position"
 ```
 
 ## Renaming Binders
@@ -213,12 +215,12 @@ When expanding a `lam` form we encounter the core of the hygiene mechanism. The 
 
 ```fsharp
 and expandLam head args low stxEnv =
-    match args with
-    | StxIdent(id, s) :: body ->
-        let (innerEnv, renamedId) = rename stxEnv id
-        let expandedBody = List.map (expandOne innerEnv) body
-        StxForm(head :: StxIdent(renamedId, s) :: expandedBody, low)
-    | _ -> failwith "Invalid syntax for lam: expected (lam <id> <body>)"
+  match args with
+  | StxIdent(id, s) :: body ->
+    let (innerEnv, renamedId) = rename stxEnv id
+    let expandedBody = List.map (expandOne innerEnv) body
+    StxForm(head :: StxIdent(renamedId, s) :: expandedBody, low)
+  | _ -> failwith "Invalid syntax for lam: expected (lam <id> <body>)"
 ```
 
 The `rename` function produces a fresh identifier with a new stamp for the binding site and adds a `Var` mapping to the syntax environment so that any reference to the same _name_ within the body will resolve to that fresh identifier. This is the key to preventing accidental capture: once a binder is renamed, all references within its scope pick up the renamed identifier through `resolve`. References originating from _outside_ the lambda body — for example, free variables in a macro template — will carry a different stamp from when they were illuminated or closed over, and so will resolve differently.
@@ -230,14 +232,15 @@ Thinking back to our nested lambda example from earlier, `expandLam` is what ens
 The `expandDefSyn` function handles the `def-syntax` special form. It parses each rule, builds a transformer, and returns an updated syntax environment:
 
 ```fsharp
-and private expandDefSyn (args: Stx list) (stxEnv: StxEnv) : Stx option * StxEnv =
-    match args with
-    | StxIdent(macroName, _) :: ruleStxs ->
-        let rules = List.map parseRule ruleStxs
-        let transformer = makeSynTransformer rules stxEnv macroName.Name
-        let newEnv = Map.add macroName.Name (Macro transformer) stxEnv
-        (None, newEnv)
-    | _ -> failwith "Invalid def-syn form: expected (def-syn <name> <rule>...)"
+and private expandDefSyn
+    (args: Stx list) (stxEnv: StxEnv) : Stx option * StxEnv =
+  match args with
+  | StxIdent(macroName, _) :: ruleStxs ->
+    let rules = List.map parseRule ruleStxs
+    let transformer = makeSynTransformer rules stxEnv macroName.Name
+    let newEnv = Map.add macroName.Name (Macro transformer) stxEnv
+    (None, newEnv)
+  | _ -> failwith "Invalid def-syn form: expected (def-syn <name> <rule>...)"
 ```
 
 Note that `expandDefSyn` returns `None` for the syntax item itself — a macro definition produces no output in the expanded tree, only a change to the environment.
@@ -246,14 +249,20 @@ Parsing a rule simply extracts the pattern argument identifiers and the template
 
 ```fsharp
 and private parseRule (ruleStx: Stx) : MacroRule =
-    match ruleStx with
-    | StxForm([StxForm(StxIdent _ :: patArgs, _); template], _) ->
-        let idents = patArgs |> List.mapi (fun i pat ->
-            match pat with
-            | StxIdent(id, _) -> id
-            | _ -> failwith $"Invalid pattern in macro rule at position {i}: expected an identifier, got %A{pat}")
-        { PatArgs = idents; Template = template }
-    | _ -> failwith $"Invalid macro rule: expected ((name pat...) template), got %A{ruleStx}"
+  match ruleStx with
+  | StxForm([StxForm(StxIdent _ :: patArgs, _); template], _) ->
+    let idents = patArgs |> List.mapi (fun i pat ->
+      match pat with
+      | StxIdent(id, _) -> id
+      | _ ->
+        failwith (
+          $"Invalid pattern in macro rule at position {i}: " +
+          $"expected an identifier, got %A{pat}"))
+    { PatArgs = idents; Template = template }
+  | _ ->
+    failwith (
+      $"Invalid macro rule: expected ((name pat...) template), " +
+      $"got %A{ruleStx}")
 ```
 
 ## The Transformer and the Syntactic Closure
@@ -261,23 +270,26 @@ and private parseRule (ruleStx: Stx) : MacroRule =
 The real payoff arrives in `makeSynTransformer`. This is where the definition-time environment is captured — forming the syntactic closure — and where it is later used to wrap the expanded template:
 
 ```fsharp
-and private makeSynTransformer (rules: MacroRule list) (defEnv: StxEnv) (macroName: string) : Transformer =
-    fun (callStx: Stx) (useEnv: StxEnv) ->
-        match callStx with
-        | StxForm(_ :: callArgs, _) ->
-            let tryRule (rule: MacroRule) =
-                match matchPatternArgs rule callArgs useEnv with
-                | Some bindings ->
-                    let substituted = applyTemplate rule.Template bindings
-                    Some (StxClosure(substituted, defEnv))
-                | None -> None
-            match List.tryPick tryRule rules with
-            | Some expanded ->
-                match expand expanded useEnv with
-                | Some result, _ -> result
-                | None, _ -> failwith $"macro '{macroName}': def-syn in template is not valid"
-            | None -> failwith $"No matching rule for macro '{macroName}'"
-        | _ -> failwith $"Invalid macro call form for '{macroName}'"
+and private makeSynTransformer
+    (rules: MacroRule list) (defEnv: StxEnv)
+    (macroName: string) : Transformer =
+  fun (callStx: Stx) (useEnv: StxEnv) ->
+    match callStx with
+    | StxForm(_ :: callArgs, _) ->
+      let tryRule (rule: MacroRule) =
+        match matchPatternArgs rule callArgs useEnv with
+        | Some bindings ->
+          let substituted = applyTemplate rule.Template bindings
+          Some (StxClosure(substituted, defEnv))
+        | None -> None
+      match List.tryPick tryRule rules with
+      | Some expanded ->
+        match expand expanded useEnv with
+        | Some result, _ -> result
+        | None, _ ->
+          failwith $"macro '{macroName}': def-syn in template is not valid"
+      | None -> failwith $"No matching rule for macro '{macroName}'"
+    | _ -> failwith $"Invalid macro call form for '{macroName}'"
 ```
 
 The transformer closes over `defEnv` — the syntax environment at the point the macro was _defined_. When the transformer is later _invoked_, it receives `useEnv` — the environment at the call site. Pattern matching happens against `useEnv`, so the arguments from the call site are bound correctly. The template however is wrapped in a `StxClosure` carrying `defEnv`. When `expand` later encounters this closure it will expand the template's contents in the definition-time environment, not the call-site environment.
@@ -285,9 +297,9 @@ The transformer closes over `defEnv` — the syntax environment at the point the
 This is the final case in `expand` — the one we have been building towards:
 
 ```fsharp
-    | StxClosure(stx, env) ->
-        let (result, _) = expand stx env
-        (result, stxEnv)
+  | StxClosure(stx, env) ->
+    let (result, _) = expand stx env
+    (result, stxEnv)
 ```
 
 When we hit a syntactic closure we expand its inner syntax using the _captured_ environment, then return the result into the _outer_ environment unchanged. The two environments never mix. An identifier `x` introduced by the macro template can only ever resolve to what `x` meant where the macro was written — not to whatever `x` might mean at the call site. The Bawden and Rees paper would approve.
